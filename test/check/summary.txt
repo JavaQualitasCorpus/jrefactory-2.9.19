@@ -1,0 +1,91 @@
+........ 
+Package:  test2
+  File:  Test2.java
+    Import:  java.io  *
+    Class:  Test2
+      Extends:  Object
+      Implements:  Serializable
+      Implements:  Cloneable
+      Field:  name
+      Method:  Test2
+        Depends:  name
+        Depends:  name
+      Method:  getName
+        Depends:  name
+      Method:  tricky
+        Depends:  bizarre:Object
+        Depends:  name
+        Depends:  bizarre.toString()
+        Depends:  fos:FileOutputStream
+        Depends:  fos.write()
+        Depends:  fos.close()
+        Depends:  ioe:IOException
+        Depends:  ioe.printStackTrace()
+      Interface:  Nameable
+        Method:  getName
+      Class:  Loader
+        Implements:  Nameable
+        Field:  name
+        Method:  getName
+          Depends:  name
+Package:  imp
+  File:  Associate.java
+    Import:    TestClass
+    Import:  java.io  *
+    Class:  Associate
+      Field:  value
+      Method:  run
+        Depends:  value
+        Depends:  TestClass
+        Depends:  value.run()
+  File:  AccessClassVar.java
+    Import:    TestClass
+    Import:  java.io  *
+    Class:  AccessClassVariable
+      Field:  value
+      Method:  run
+        Depends:  value
+        Depends:  TestClass.code
+  File:  AssociateThree.java
+    Import:    TestClass
+    Import:  java.io  *
+    Class:  AssociateThree
+      Field:  value
+      Method:  run
+        Depends:  value
+        Depends:  TestClass
+        Depends:  value.run()
+  File:  AssociateFour.java
+    Import:    TestClass
+    Import:  java.io  *
+    Class:  AssociateFour
+      Method:  run
+        Depends:  value
+        Depends:  TestClass
+        Depends:  value.run()
+Package:  java.io
+Package:  
+  File:  Nonassociate.java
+    Import:  java.io  *
+    Import:  imp  *
+    Class:  Nonassociate
+      Extends:  Associate
+      Method:  run
+        Depends:  value.run()
+  File:  AssociateTwo.java
+    Import:  java.io  *
+    Class:  AssociateTwo
+      Field:  value
+      Method:  run
+        Depends:  value
+        Depends:  TestClass
+        Depends:  value.run()
+  File:  TestClass.java
+    Import:  java.io  *
+    Class:  TestClass
+      Field:  two
+      Field:  code
+      Method:  main
+        Depends:  TestClass
+      Method:  run
+        Depends:  System.out.println()

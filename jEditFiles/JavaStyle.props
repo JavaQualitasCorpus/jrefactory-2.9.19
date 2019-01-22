@@ -1,0 +1,198 @@
+#
+# Plugin properties
+#
+# jEdit buffer options:
+# :tabSize=8:indentSize=8:noTabs=false:maxLineLen=80:
+javastyle.title=JavaStyle
+javastyle.label=JavaStyle
+navigator.title=Navigator
+navigator.label=Navigator
+javastyle-cpd-viewer.title=CPD
+javastyle-cpd-viewer.label=CPD
+
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.activate=defer
+
+#This plugin should be activated before the first file is saved,
+#don't know how to do this
+#
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.activate=startup
+
+#{{{ Plugin properties
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.name=JavaStyle
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.author=Mike Atkinson, Dirk Moebius, Chris Seguin
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.version=2.9.19
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.docs=index.html
+
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.depend.0=jedit 04.02.02.00
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.depend.1=plugin errorlist.ErrorListPlugin 1.3
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.depend.2=plugin projectviewer.ProjectPlugin 2.0
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.depend.3=plugin jakartacommons.JakartaCommonsPlugin 0.4.1
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.depend.4=jdk 1.4
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.jars=
+#}}}
+
+
+
+
+#{{{ jEdit Plugins menu
+#jEdit 4.2 style
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.menu=javastyle-reformat \
+	javastyle \
+	navigator \
+	- \
+	%javastyle-refactor \
+	%javastyle-coding \
+	%javastyle-cpd \
+	- \
+        javastyle-options
+#	- \
+#	javastyle_open_uml \
+#	javastyle_open_all_files \
+#	javastyle_remove_all_files \
+
+javastyle-refactor=%javastyle-type-refactor %javastyle-method-refactor %javastyle-field-refactor
+javastyle-cpd=javastyle-cpd-currentfile javastyle-cpd-dir javastyle-cpd-dir-recursively
+javastyle-coding=javastyle-check-current-buffer \
+	javastyle-check-all-open-buffers \
+	javastyle-check-current-directory \
+	javastyle-check-current-directory-recursively \
+	javastyle-clear-errorlist \
+
+javastyle-type-refactor=javastyle-rename-class \
+	javastyle-move-class-to \
+	javastyle-add-abstract-parent \
+	javastyle-add-child-class \
+	javastyle-remove-class \
+	javastyle-extract-interface \
+	javastyle-rename-variables
+javastyle-method-refactor=javastyle-rename-method \
+	javastyle-push-up-method \
+	javastyle-push-up-abstract \
+	javastyle-push-down-method \
+	javastyle-move-method \
+	javastyle-rename-parameters
+
+javastyle-field-refactor=javastyle-rename-field \
+	javastyle-push-up-field \
+	javastyle-push-down-field
+
+#
+# Menu properties
+#
+
+#javastyle.title=JavaStyle
+#javastyle.label=JavaStyle
+javastyle-reformat.label=Reformat Buffer
+javastyle.label=JRefactory...
+navigator.label=Navigator...
+javastyle-check-current-buffer.label=Check current buffer
+javastyle-check-all-open-buffers.label=Check all open buffers
+javastyle-check-current-directory.label=Check all files in current directory
+javastyle-check-current-directory-recursively.label=Check directory recursively
+javastyle-clear-errorlist.label=Clear ErrorList
+javastyle-cpd.label=Detect Duplicate Code
+javastyle-coding.label=Coding Standards
+javastyle-cpd-currentfile.label=In Current File
+javastyle-cpd-dir.label=In Directory
+javastyle-cpd-dir-recursively.label=In Directory Recursively
+javastyle-check-file.label=Check selected file(s)
+javastyle_load_uml.label=Add file(s) to UML
+#javastyle_open_all_files.label=Add Project Files to UML
+#javastyle_remove_all_files.label=Remove Project Files from UML
+#javastyle_open_options.label=Options...
+javastyle-options.label=Options...
+#}}}
+
+javastyle-selectedfiles-viewer-menu-item=View selected files
+
+javastyle-refactor.label=Refactor
+javastyle-type-refactor.label=Type refactorings
+javastyle-rename-class.label=Rename class
+javastyle-move-class-to.label=Move class to
+javastyle-add-abstract-parent.label=Add abstract parent class
+javastyle-add-child-class.label=Add child class
+javastyle-remove-class.label=Remove class
+javastyle-extract-interface.label=Extract interface
+javastyle-rename-variables.label=Rename variables using Hungarian notation
+
+javastyle-method-refactor.label=Method refactorings
+javastyle-rename-method.label=Rename method
+javastyle-push-up-method.label=Push up
+javastyle-push-up-abstract.label=Push up (abstract)
+javastyle-push-down-method.label=Push down
+javastyle-move-method.label=Move method
+javastyle-rename-parameters.label=Rename parameters
+
+javastyle-field-refactor.label=Field refactorings
+javastyle-rename-field.label=Rename method
+javastyle-push-up-field.label=Push up
+javastyle-push-down-field.label=Push down
+
+
+#{{{ UI messages
+javastyle.show=Show
+javastyle.hide=Hide
+javastyle.reload=Reload
+javastyle.reload_all=Reload All
+javastyle.load_project=Open Java files below directory
+#}}}
+
+
+#{{{ Action messages
+javastyle.action.undo=Undo Refactoring
+javastyle.action.show=Show
+javastyle.action.hide=Hide
+javastyle.action.reload=Reload
+javastyle.action.reload_all=Reload All
+#}}}
+
+
+#{{{ jEdit Plugin Options... panes messages
+#jEdit 4.2 style option pane creation
+
+### JavaStyle option panes
+plugin.org.acm.seguin.ide.jedit.JavaStylePlugin.option-group=javastyle.general \
+	javastyle.indenting \
+	javastyle.spacing \
+	javastyle.alignment \
+	javastyle.sorting \
+	javastyle.javadoc \
+	javastyle.stubs \
+	javastyle.stubs2 \
+	javastyle.stubs_junit \
+	javastyle.tags \
+	javastyle.comments \
+	javastyle.pmd \
+	javastyle.navigator
+
+options.javastyle.label=JavaStyle
+options.javastyle.general.label=General
+options.javastyle.general.code=new org.acm.seguin.ide.jedit.JSOptionPane(0);
+options.javastyle.indenting.label=Indenting
+options.javastyle.indenting.code=new org.acm.seguin.ide.jedit.JSOptionPane(1);
+options.javastyle.spacing.label=Spacing
+options.javastyle.spacing.code=new org.acm.seguin.ide.jedit.JSOptionPane(2);
+options.javastyle.alignment.label=Alignment
+options.javastyle.alignment.code=new org.acm.seguin.ide.jedit.JSOptionPane(3);
+options.javastyle.sorting.label=Sorting
+options.javastyle.sorting.code=new org.acm.seguin.ide.jedit.JSOptionPane(4);
+options.javastyle.javadoc.label=JavaDoc comments
+options.javastyle.javadoc.code=new org.acm.seguin.ide.jedit.JSOptionPane(5);
+options.javastyle.stubs.label=JavaDoc stubs
+options.javastyle.stubs.code=new org.acm.seguin.ide.jedit.JSOptionPane(6);
+options.javastyle.stubs2.label=More JavaDoc stubs
+options.javastyle.stubs2.code=new org.acm.seguin.ide.jedit.JSOptionPane(7);
+options.javastyle.stubs_junit.label=JavaDoc JUnit stubs
+options.javastyle.stubs_junit.code=new org.acm.seguin.ide.jedit.JSOptionPane(8);
+options.javastyle.tags.label=JavaDoc tags
+options.javastyle.tags.code=new org.acm.seguin.ide.jedit.JSOptionPane(9);
+options.javastyle.comments.label=Other comments
+options.javastyle.comments.code=new org.acm.seguin.ide.jedit.JSOptionPane(10);
+options.javastyle.pmd.label=Coding Standards
+options.javastyle.pmd.code=new org.acm.seguin.ide.jedit.JSOptionPane(11);
+options.javastyle.navigator.label=Navigator
+options.javastyle.navigator.code=new org.acm.seguin.ide.jedit.JSOptionPane(12);
+
+options.javastyle.helpArea=Help
+
+

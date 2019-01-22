@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Created-By: 1.4.2 (Sun Microsystems Inc.)
+Main-Class: org.acm.seguin.ide.standalone.JRefactory
+Class-Path: jaxen-core-1.0-fcs.jar : saxpath-1.0-fcs.jar : dom4j-full.jar : bcel.jar : coreplugin.jar : findbugs.jar : findbugsGUI.jar
+
+Name: org.acm.seguin.ide.elixir
+Elixir-Extension: org.acm.seguin.ide.elixir.RefactoryExtension
+OpenTools-UI: org.acm.seguin.ide.jbuilder.UMLNode
+JDeveloper9i-Addin: org.acm.seguin.ide.jdeveloper.JDeveloperPrettyPrinter
+Addin0: org.acm.seguin.ide.jdeveloper.JDeveloperPrettyPrinter
+AddinCount: 1
+JDeveloper9iLoadExtQuiet: 1
+
+Name: org/acm/seguin/ide/netbeans/
+Specified-By: org/acm/seguin/ide/netbeans/JRefactoryModule.jarContent
+OpenIDE-Module-Layer: org/acm/seguin/ide/netbeans/JRefactoryLayer.xml
+OpenIDE-Module-Name: JRefactory
+OpenIDE-Module-Short-Description: JRefactory for Netbeans
+OpenIDE-Module-Implementation-Version: build 3
+OpenIDE-Module-Long-Description: Java refactoring tool plugin for Netbeans
+Created-By: NetBeans
+OpenIDE-Module-Specification-Version: 0.2
+OpenIDE-Module: org.acm.seguin.ide.netbeans.JRefactoryModule
+
+Name: org.acm.seguin.ide.cafe.CafeSetup
+VisualCafe-Plugin: True
+Java-Bean: False

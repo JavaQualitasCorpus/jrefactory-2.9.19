@@ -1,0 +1,8 @@
+V[1.1:org.acm.seguin.ide.jdeveloper]
+S[org.acm.seguin.ide.jdeveloper:JDeveloperPrettyPrinter,org.acm.seguin.pretty:PrettyPrintFromIDE]{2:(356,291),(355,226)}
+S[org.acm.seguin.ide.jdeveloper:JDeveloperPrettyPrinter,<unknown>:oracle.ide.addin]{2:(471,291),(542,116)}
+S[org.acm.seguin.ide.jdeveloper:JDeveloperPrettyPrinter,<unknown>:oracle.ide.addin]{2:(210,291),(115,117)}
+P[org.acm.seguin.ide.jdeveloper:JDeveloperPrettyPrinter]{38,291}
+P[org.acm.seguin.pretty:PrettyPrintFromIDE]{260,20}
+P[<unknown>:oracle.ide.addin]{505,24}
+P[<unknown>:oracle.ide.addin]{34,25}

@@ -1,0 +1,16 @@
+Original author:
+	Andreas Schaefer <andreas.schaefer@madplanet.com>
+
+Maintainer since version 0.3:
+	Dirk Moebius <dmoebius@gmx.net>
+
+Maintainer since version 1.3:
+	Mike Atkinson <JavaStyle@ladyshot.demon.co.uk>
+
+The PrettyPrinter is part of the JRefactory suite (http://jrefactory.sf.net), by:
+	Chris Seguin <seguin@acm.org>
+	Mike Atkinson <JRefactory@ladyshot.demon.co.uk>
+
+Older versions of JavaStyle (< 0.3) contained JStyle (aka JSFormatter,
+JSBeautifier, http://www.redrival.com/greenrd/java/jstyle/) by:
+	Tal Davidson <davidsont@bigfoot.com>

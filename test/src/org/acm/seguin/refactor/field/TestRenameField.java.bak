@@ -1,0 +1,85 @@
+package org.acm.seguin.refactor.field;
+
+import java.io.File;
+import org.acm.seguin.io.FileCopy;
+import org.acm.seguin.summary.SummaryTraversal;
+import org.acm.seguin.junit.FileCompare;
+import org.acm.seguin.junit.DirSourceTestCase;
+import org.acm.seguin.refactor.RefactoringException;
+
+/**
+ *  Unit tests for the pullup field refactoring.
+ *
+ *@author    Chris Seguin
+ */
+public class TestRenameFieldRefactoring extends DirSourceTestCase {
+	private File impDest;
+	private File dest;
+
+
+	/**
+	 *  Constructor for the TestPullUpFieldRefactoring object
+	 *
+	 *@param  name  the name of the unit test to run
+	 */
+	public TestRenameFieldRefactoring(String name) {
+		super(name);
+	}
+
+
+	/**
+	 *  A unit test for JUnit
+	 */
+	public void test1() {
+		RenameFieldRefactoring rfr = new PushUpFieldRefactoring();
+		rfr.setClass("field", "Child");
+		rfr.setField("panel1");
+
+		rfr.run();
+
+		//  Check things out
+		File check = new File(this.check + "\\ut2\\step1");
+
+		FileCompare.assertEquals("RenameFieldTest is incorrect",
+				new File(check, "RenameFieldTest.java"),
+				new File(dest, "RenameFieldTest.java"));
+		FileCompare.assertEquals("UsesFieldTest is incorrect",
+				new File(check, "UsesFieldTest.java"),
+				new File(dest, "UsesFieldTest.java"));
+		FileCompare.assertEquals("Parent is incorrect",
+				new File(check, "Parent.java"),
+				new File(dest, "Parent.java"));
+	}
+
+
+	/**
+	 *  The JUnit setup method
+	 */
+	protected void setUp() {
+		File cleanDir = new File(this.clean);
+		dest = new File(root + "\\field");
+		if (!dest.exists()) {
+			dest.mkdirs();
+		}
+
+		(new FileCopy(
+				new File(cleanDir, "field_RenameFieldTest.java"),
+				new File(dest, "RenameFieldTest.java"),
+				false)).run();
+		(new FileCopy(
+				new File(cleanDir, "field_UsesFieldTest.java"),
+				new File(dest, "UsesFieldTest.java"),
+				false)).run();
+
+		(new SummaryTraversal(root)).go();
+	}
+
+
+	/**
+	 *  The teardown method for JUnit
+	 */
+	protected void tearDown() {
+		(new File(dest, "RenameFieldTest.java")).delete();
+		(new File(dest, "UsesFieldTest.java")).delete();
+	}
+}

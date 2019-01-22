@@ -1,0 +1,8 @@
+V[1.1:net.sourceforge.jrefactory.io]
+S[net.sourceforge.jrefactory.io:ASCII_CharStream,net.sourceforge.jrefactory.io:CharStream]{2:(942,878),(918,821)}
+S[net.sourceforge.jrefactory.io:JavaCharStream,net.sourceforge.jrefactory.io:CharStream]{2:(698,1156),(727,821)}
+S[net.sourceforge.jrefactory.io:SimpleCharStream,net.sourceforge.jrefactory.io:CharStream]{2:(463,628),(506,595)}
+P[net.sourceforge.jrefactory.io:ASCII_CharStream]{736,878}
+P[net.sourceforge.jrefactory.io:CharStream]{504,5}
+P[net.sourceforge.jrefactory.io:JavaCharStream]{472,1155}
+P[net.sourceforge.jrefactory.io:SimpleCharStream]{2,387}

@@ -1,0 +1,4 @@
+V[1.1:org.apache.tools.ant.taskdefs.optional.javastyle]
+S[org.apache.tools.ant.taskdefs.optional.javastyle:JavaStyle,<unknown>:org.apache.tools.ant.taskdefs]{2:(112,137),(113,112)}
+P[org.apache.tools.ant.taskdefs.optional.javastyle:JavaStyle]{11,137}
+P[<unknown>:org.apache.tools.ant.taskdefs]{22,20}

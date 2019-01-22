@@ -1,0 +1,4 @@
+V[1.1:org.acm.seguin.findbugs]
+S[org.acm.seguin.findbugs:FindBugsFrame,<unknown>:edu.umd.cs.findbugs.gui.FindBugsFrame]{2:(333,169),(294,76)}
+P[org.acm.seguin.findbugs:FindBugsFrame]{20,169,true,true}
+P[<unknown>:edu.umd.cs.findbugs.gui.FindBugsFrame]{137,21,true,true}

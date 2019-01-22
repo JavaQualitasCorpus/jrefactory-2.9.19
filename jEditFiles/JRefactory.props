@@ -1,0 +1,90 @@
+# :folding=explicit:collapseFolds=1:
+
+#{{{ Plugin properties
+plugin.jrefactory.JRefactoryPlugin.name=JRefactory
+plugin.jrefactory.JRefactoryPlugin.author=Mike Atkinson
+plugin.jrefactory.JRefactoryPlugin.version=0.0.1
+plugin.jrefactory.JRefactoryPlugin.docs=users-guide.html
+
+plugin.jrefactory.JRefactoryPlugin.depend.0=jedit 04.01.08.00
+plugin.jrefactory.JRefactoryPlugin.depend.1=jdk 1.3
+plugin.jrefactory.JRefactoryPlugin.activate=true
+#}}}
+
+jrefactory.title=JRefactory
+jrefactory.label=JRefactory
+
+
+
+#{{{ jEdit Plugins menu
+#jEdit 4.2 style
+plugin.jrefactory.JRefactoryPlugin.menu=jrefactory \
+	- \
+	jrefactory_open_uml2 \
+	jrefactory_open_all_files2 \
+	jrefactory_remove_all_files2 \
+	- \
+        jrefactory_open_options
+jrefactory_open_uml2.label=Add file to UML (2)
+jrefactory_open_all_files2.label=Add Project Files to UML (2)
+jrefactory_remove_all_files2.label=Remove Project Files from UML (2)
+jrefactory_open_options.label=Options...
+
+
+#jEdit 4.1 style
+jrefactory.menu=jrefactory \
+	- \
+	jrefactory_open_uml \
+	jrefactory_open_all_files \
+	jrefactory_remove_all_files \
+	- \
+        jrefactory_open_options
+jrefactory.menu.label=JRefactory
+jrefactory_open_options.label=JRefactory Options
+jrefactory_open_uml.label=Add file to UML
+jrefactory_open_all_files.label=Add Project Files to UML
+jrefactory_remove_all_files.label=Remove Project Files from UML
+selectedfiles-viewer-menu-item.label=Paste File Names
+#}}}
+
+#{{{ jEdit option panes messages
+#jEdit 4.2 style option pane creation
+plugin.jrefactory.JRefactoryPlugin.option-pane=jrefactory
+options.jrefactory.code= new jrefactory.config.JRefactoryOptionsPane("jrefactory.mainconfig");
+
+
+options.jrefactory.label=JRefactory
+
+options.jrefactory.mainconfig=JRefactory
+options.jrefactory.mainconfig.label=Java Refactory
+
+options.jrefactory.general-opt.label=General Behaviour
+options.jrefactory.importer-opt.label=Importing Files
+
+jrefactory.options.jdk=JDK version:
+jrefactory.options.jdk.tooltip=This is the Java Development Kit version to use (e.g. "1.4.2")
+#}}}
+
+#{{{ UI messages
+jrefactory.show=Show
+jrefactory.hide=Hide
+jrefactory.reload=Reload
+jrefactory.reload_all=Reload All
+jrefactory.load_project=Open Java files below directory
+#}}}
+
+
+#{{{ Action messages
+jrefactory.action.undo=Undo Refactoring
+jrefactory.action.show=Show
+jrefactory.action.hide=Hide
+jrefactory.action.reload=Reload
+jrefactory.action.reload_all=Reload All
+#}}}
+
+#{{{ Confirmation messages
+#}}}
+
+#{{{ Project Options Pane messages
+#}}}
+

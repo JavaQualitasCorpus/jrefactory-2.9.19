@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Specified-By: org/acm/seguin/ide/netbeans/JRefactoryModule.jarContent
+OpenIDE-Module-Layer: org/acm/seguin/ide/netbeans/JRefactoryLayer.xml
+OpenIDE-Module-Name: JRefactory
+OpenIDE-Module-Short-Description: JRefactory for Netbeans
+OpenIDE-Module-Implementation-Version: build 4
+OpenIDE-Module-Long-Description: Java refactoring tool plugin for Netbeans
+OpenIDE-Module-Module-Dependencies: org.netbeans.modules.java/1 > 1.0, org.netbeans.modules.projects/1 > 1.0
+OpenIDE-Module-Specification-Version: 0.2
+OpenIDE-Module: org.acm.seguin.ide.netbeans.JRefactoryModule
+
+Name: org/acm/seguin/ide/netbeans/PrettyPrinterAction.class
+OpenIDE-Module-Class: Action
+Name: org/acm/seguin/ide/netbeans/OptionsAction.class
+OpenIDE-Module-Class: Action
+Name: org/acm/seguin/ide/netbeans/JRefactoryAction.class
+OpenIDE-Module-Class: Action
+Name: org/acm/seguin/ide/netbeans/RefactorDirAction.class
+OpenIDE-Module-Class: Action
+Name: org/acm/seguin/ide/netbeans/CSDirAction.class
+OpenIDE-Module-Class: Action
+Name: org/acm/seguin/ide/netbeans/CPDDirAction.class
+OpenIDE-Module-Class: Action
+

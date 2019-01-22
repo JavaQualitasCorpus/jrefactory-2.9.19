@@ -1,0 +1,15 @@
+V[1.1:org.acm.seguin.print.xml]
+S[org.acm.seguin.print.xml:AttributeState,org.acm.seguin.print.xml:State]{2:(731,477),(668,398)}
+S[org.acm.seguin.print.xml:AttributeValueState,org.acm.seguin.print.xml:State]{2:(305,190),(371,197)}
+S[org.acm.seguin.print.xml:QuoteAttributeValueState,org.acm.seguin.print.xml:State]{2:(248,429),(371,331)}
+S[org.acm.seguin.print.xml:TagState,org.acm.seguin.print.xml:State]{2:(310,268),(371,251)}
+S[org.acm.seguin.print.xml:TextState,org.acm.seguin.print.xml:State]{2:(482,481),(490,421)}
+S[org.acm.seguin.print.xml:XMLLinePrinter,org.acm.seguin.print.text:LinePrinter]{2:(863,217),(863,174)}
+P[org.acm.seguin.print.xml:AttributeState]{636,477}
+P[org.acm.seguin.print.xml:AttributeValueState]{9,120}
+P[org.acm.seguin.print.xml:QuoteAttributeValueState]{31,429}
+P[org.acm.seguin.print.xml:State]{371,5}
+P[org.acm.seguin.print.xml:TagState]{14,253}
+P[org.acm.seguin.print.xml:TextState]{327,481}
+P[org.acm.seguin.print.xml:XMLLinePrinter]{691,217}
+P[org.acm.seguin.print.text:LinePrinter]{690,6}

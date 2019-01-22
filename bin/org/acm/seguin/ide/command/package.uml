@@ -1,0 +1,15 @@
+V[1.1:org.acm.seguin.ide.command]
+S[org.acm.seguin.ide.command:CommandLineSourceBrowser,org.acm.seguin.ide.common:SourceBrowser]{2:(109,235),(113,174)}
+S[org.acm.seguin.ide.command:ExitMenuSelection,java.awt.event:WindowAdapter]{2:(580,360),(623,276)}
+S[org.acm.seguin.ide.command:UMLFrame,javax.swing:JFrame]{2:(722,587),(820,517)}
+S[org.acm.seguin.ide.command:ExitMenuSelection,java.awt.event:ActionListener]{2:(529,360),(436,123)}
+S[org.acm.seguin.ide.command:ZoomAdapter,java.awt.event:ActionListener]{2:(352,233),(394,123)}
+P[org.acm.seguin.ide.command:CommandLineMenu]{146,514}
+P[org.acm.seguin.ide.command:CommandLineSourceBrowser]{9,235}
+P[org.acm.seguin.ide.command:ExitMenuSelection]{443,360}
+P[org.acm.seguin.ide.command:UMLFrame]{533,581}
+P[org.acm.seguin.ide.command:ZoomAdapter]{211,233}
+P[org.acm.seguin.ide.common:SourceBrowser]{27,25}
+P[java.awt.event:WindowAdapter]{572,13}
+P[javax.swing:JFrame]{820,10}
+P[java.awt.event:ActionListener]{313,13}

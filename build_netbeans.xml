@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JRefractoryModule 2.9.19" basedir="." default="all">
+
+  <property name="version"              value="2.9.19"/>
+  <property name="name"                 value="JRefactory"/>
+
+  <property name="src.dir"              value="${basedir}/src"/>
+  <property name="docs.dir"             value="${basedir}"/>
+  <property name="jars.dir"             value="${basedir}/jar"/>
+  <property name="parent.dir"           value="${basedir}/../"/>
+
+  <property name="test.dir"             value="test"/>
+  <property name="test.src.dir"         value="${test.dir}/src"/>
+  <property name="test.classes.dir"     value="${test.dir}/classes"/>
+
+  <property name="packages"             value="com.*,org.*"/>
+
+  <property name="build.file"           value="build.xml" />
+  <property name="build.dir"            value="ant.build" />
+  <property name="build.dest"           value="${build.dir}/classes" />
+  <property name="build.lib"            value="${build.dir}/lib" />
+  <property name="build.javadocs"       value="docs/api" />
+  <property name="build.compiler.emacs" value="yes" />
+  
+  <property name="module.dir"           value="${basedir}/netbeans/modules" />
+  <property name="docs.dir"             value="${basedir}/docs" />
+
+  <property name="test.reports"         value="${build.dir}/reports" />
+  
+  <!-- proguard seems to require this -->
+  <property name="jdk.lib"              value="c:\program files\java\j2sdk1.5.0\jre\lib\" />
+  <property name="netbeans.lib"         value="${basedir}/../../../netbeans3.6/lib" />
+  <property name="netbeans.modules"     value="${basedir}/../../../netbeans3.6/modules" />
+
+
+  <path id="build.classpath">
+     <pathelement path="${netbeans.lib}/openide.jar"/>                         <!-- Netbeans -->
+     <pathelement path="${netbeans.modules}/autoload/openide-io.jar"/>         <!-- Netbeans -->
+     <pathelement path="${netbeans.lib}/openide-loaders.jar"/>                 <!-- Netbeans -->
+     <pathelement path="${netbeans.modules}/java.jar"/>                        <!-- Netbeans -->
+     <pathelement path="${netbeans.modules}/autoload/java-src-model.jar"/>     <!-- Netbeans -->
+     <pathelement path="${netbeans.modules}/autoload/openide-deprecated.jar"/> <!-- Netbeans -->
+     <pathelement path="${netbeans.modules}/projects.jar"/>                    <!-- Netbeans -->
+     <pathelement path="${jars.dir}/findbugs.jar"/>                            <!-- FindBugs -->
+     <pathelement path="${jars.dir}/findbugsGUI.jar"/>                         <!-- FindBugs -->
+     <pathelement path="${jars.dir}/coreplugin.jar"/>                          <!-- FindBugs -->
+  </path>
+
+    <!-- Sample Ant script to create a NetBeans module and test it. -->
+    <!-- Expected directory layout: -->
+    <!-- build.xml   - this file -->
+    <!-- src/        - sources (package root) -->
+    <!-- manifest.mf - module manifest -->
+    <!-- netbeans/   - build products (root matches NB installation root) -->
+    <!-- You will need to have src/ mounted in order for Java-related IDE functions to work properly. -->
+    <!-- You can do this most conveniently using the "View over a Filesystem" module. -->
+
+    <!-- Set this according to your NB installation. -->
+    <property name="nb" location="${netbeans.home}"/>
+    <!-- This might instead be in ${netbeans.user}/antlib/nbantext.jar: -->
+    <property name="nbantext.jar" location="${build.lib}/nbantext.jar"/>
+
+    <target name="compile">
+        <echo>"${netbeans.modules}"</echo>
+        <delete dir="${build.dest}"/>
+        <mkdir dir="${build.dest}"/>
+        <javac srcdir="src"
+               destdir="${build.dest}"
+               debug="true"
+               classpathref="build.classpath"
+               >
+            <include name="org/acm/seguin/ide/netbeans/*.java" />
+        </javac>
+    </target>
+
+    <target name="jars" depends="compile">
+        <jar jarfile="${build.lib}/${name}.jar" manifest="${src.dir}/meta-inf/JRefactoryModule.mf" compress="false">
+            <fileset dir="${build.dest}">
+                <include name="org/acm/seguin/ide/netbeans/*.class" />
+            </fileset>
+            <fileset dir="${src.dir}">
+                <include name="org/acm/seguin/ide/netbeans/resources/*.gif"/>
+                <include name="org/acm/seguin/ide/netbeans/resources/*.xml"/>
+                <include name="org/acm/seguin/ide/netbeans/*.gif"/>
+                <include name="org/acm/seguin/ide/netbeans/*.xml"/>
+                <include name="org/acm/seguin/ide/netbeans/*.properties"/>
+                <include name="ui/JavaStyle.props"/>
+            </fileset>
+            <fileset dir="${src.dir}/org/acm/seguin/ide/netbeans/">
+                <include name="*.jarContents"/>
+            </fileset>
+        </jar>
+    </target>
+
+    <target name="all" depends="jars" description="Build the module."/>
+
+    <!-- This target will only work *inside* the IDE! -->
+    <target name="reload" depends="combine" description="Test the module inside the running IDE.">
+        <nbinstaller module="${module.dir}/${name}.jar" action="reinstall"/>
+    </target>
+
+<!--
+    <target name="nbm" depends="combine" description="Prepare the module for distribution via Auto Update.">
+-->
+    <target name="nbm" description="Prepare the module for distribution via Auto Update.">
+        <taskdef name="makenbm" classname="org.netbeans.nbbuild.MakeNBM" classpath="${nbantext.jar}"/>
+        <makenbm file="docs/${name}.nbm"
+                 topdir="."
+                 module="${module.dir}/${name}.jar"
+                 homepage="http://jrefactory.sf.net/"
+                 distribution="http://jrefactory.sf.net/jrefactory.nbm" >
+            <license file="${basedir}/docs/license-netbeans.txt"/>
+            <!-- signature element permitted also if you have the secret key for lib/ide.ks -->
+            <!-- otherwise users will be warned that your NBM is unsigned, and will have to accept it -->
+        </makenbm>
+    </target>
+    <!--makenbm file="ant.nbm"
+             topdir="."
+             module="netbeans/modules/ant.jar"
+	     homepage="http://ant.${homepage.base}/"
+	     distribution="http://${dist.base}/ant.nbm">
+      <license name="ant-license.txt">
+        <text>For the Ant module itself:</text>
+        <file location="${license.file}"/>
+	<text>For the Ant runtime:</text>
+	<file location="../nbbuild/external/apache-license-2.0.txt"/>
+      </license>
+      <signature keystore="${keystore}" storepass="${storepass}" alias="${nbm_alias}"/>
+    </makenbm-->
+
+    <target name="clean" description="Clean all build products.">
+        <delete dir="${build.dir}/classes"/>
+        <delete dir="${build.dir}/netbeans"/>
+        <delete dir="${build.dir}/Info"/>
+        <delete file="${build.dir}/${name}.nbm"/>
+        <delete dir="${module.dir}"/>
+    </target>
+
+
+    <!-- ================================================================== -->
+    <!--           Combine al the required libraries into one jar           -->
+    <!-- ================================================================== -->
+    <target name="combine" depends="all" description="squash using proguard">
+        <!-- Use a separate directory, since the IDE will create junk files like reload/mymodule12345-test.jar: -->
+        <mkdir dir="${module.dir}"/>
+        <!--
+        <copy file="netbeans/modules/mymodule.jar" tofile="reload/mymodule.jar"/>
+        -->
+        <!-- If you have some Class-Path extensions, you might want to test changes to these as well. -->
+        <!-- To do so, try: -->
+        <zip zipfile="${module.dir}/${name}.jar" compress="false" >
+            <zipfileset src="${build.lib}/jrefactory-for-netbeans.jar" >
+                <exclude name="META-INF/MANIFEST.MF"/>
+                <exclude name="*.xsl"/>
+            </zipfileset>
+            <zipfileset src="${build.lib}/${name}.jar"/>
+        </zip>
+    </target>
+
+
+    <!-- ================================================================== -->
+    <!--           Combine al the required libraries into one jar           -->
+    <!-- ================================================================== -->
+    <target name="dist" depends="combine" description="zip for distribution">
+        <mkdir dir="${build.dir}/dist"/>
+        <zip zipfile="${build.dir}/dist/javastyle-netbeans-${version}.zip" compress="true" >
+            <fileset dir="${module.dir}/">
+                <include name="${name}.jar"/>
+            </fileset>
+        </zip>
+    </target>
+
+
+    <!-- ================================================================== -->
+    <!--           Remove unused classes and methods to reduce size         -->
+    <!--                 Warning this is not working yet                    -->
+    <!-- ================================================================== -->
+    <target name="squash" description="squash using proguard"> <!-- depends="all, combine" > -->
+        <taskdef name="proguard" classname="proguard.ant.ProGuardTask" classpath="${jars.dir}/proguard.jar" />
+
+        <proguard outjar="${module.dir}\${name}_out.jar" ignorewarnings="true" >
+           <injar name="${module.dir}\${name}.jar" />
+           <libraryjar name="${jdk.lib}/rt.jar" />
+           <libraryjar name="${jars.dir}/openide.jar" />
+           <libraryjar name="${jdk.lib}/sunrsasign.jar" />
+           <libraryjar name="${jdk.lib}/jsse.jar" />
+           <libraryjar name="${jdk.lib}/jce.jar" />
+           <libraryjar name="${jdk.lib}/ext/dnsns.jar" />
+           <libraryjar name="${jdk.lib}/ext/ldapsec.jar" />
+           <libraryjar name="${jdk.lib}/ext/localedata.jar" />
+           <libraryjar name="${jdk.lib}/ext/sunjce_provider.jar" />
+
+
+           <keep extends="org.openide.util.actions.CallableSystemAction" />
+           <keep extends="extends org.openide.util.actions.CookieAction" />
+           <keep name="org.acm.seguin.ide.netbeans.*" />
+           <keep implements="org.acm.seguin.pmd.renderers.Renderer" />
+           <keep implements="org.acm.seguin.version.VersionControl" />
+           <keep name="edu.umd.cs.findbugs.FindBugs" />
+         
+           <keep name="org.acm.seguin.ide.standalone.JRefactory">
+              <method name="main" param="java.lang.String[]">
+                 <access name="public" />
+                 <access name="static" />
+              </method>
+           </keep>
+         
+        </proguard>
+    </target>
+</project>

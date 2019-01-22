@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+
+<ruleset name="Basic Rules">
+  <description>
+The Basic Ruleset contains a collection of good practices which everyone should follow.
+  </description>
+
+
+    <rule name="EmptyCatchBlock"
+          message="Avoid empty catch blocks"
+          class="net.sourceforge.pmd.rules.XPathRule">
+      <description>
+  Empty Catch Block finds instances where an exception is caught,
+  but nothing is done.  In most circumstances, this swallows an exception
+  which should either be acted on or reported.
+      </description>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+    //TryStatement
+    [@Catch='true']
+    [FormalParameter/Type/Name[@Name != 'InterruptedException']]
+    [FormalParameter/Type/Name[@Name != 'CloneNotSupportedException']]
+    /Block[position() > 1]
+    [count(*) = 0]
+    [../@Finally='false' or following-sibling::Block]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+        <priority>3</priority>
+
+      <example>
+  <![CDATA[
+public void doSomething() {
+   try {
+      FileInputStream fis = new FileInputStream("/tmp/bugger");
+   } catch (IOException ioe) {
+      // not good
+   }
+}
+  ]]>
+      </example>
+    </rule>
+
+    <rule name="EmptyIfStmt"
+          message="Avoid empty 'if' statements"
+          class="net.sourceforge.pmd.rules.XPathRule">
+      <description>
+  Empty If Statement finds instances where a condition is checked but nothing is done about it.
+    </description>
+        <priority>3</priority>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+                    //IfStatement/Statement/Block[count(*) = 0]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+      <example>
+  <![CDATA[
+if (absValue < 1) {
+   // not good
+}
+  ]]>
+       </example>
+    </rule>
+
+
+    <rule name="EmptyWhileStmt"
+          message="Avoid empty 'while' statements"
+          class="net.sourceforge.pmd.rules.XPathRule">
+       <description>
+  Empty While Statement finds all instances where a while statement
+  does nothing.  If it is a timing loop, then you should use Thread.sleep() for it; if
+  it's a while loop that does a lot in the exit expression, rewrite it to make it clearer.
+       </description>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+    //WhileStatement/Statement/Block[count(*) = 0]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+        <priority>3</priority>
+
+       <example>
+  <![CDATA[
+while (a == b) {
+   // not good
+}
+  ]]>
+       </example>
+    </rule>
+
+
+    <rule name="EmptyTryBlock"
+          message="Avoid empty try blocks"
+          class="net.sourceforge.pmd.rules.XPathRule">
+      <description>
+  Avoid empty try blocks - what's the point?
+      </description>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+    //TryStatement/Block[1][count(*) = 0]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+        <priority>3</priority>
+
+      <example>
+  <![CDATA[
+// this is bad
+public void bar() {
+   try {
+   } catch (Exception e) {
+      e.printStackTrace();
+   }
+}
+  ]]>
+      </example>
+    </rule>
+
+    <rule name="EmptyFinallyBlock"
+          message="Avoid empty finally blocks"
+          class="net.sourceforge.pmd.rules.XPathRule">
+      <description>
+  Avoid empty finally blocks - these can be deleted.
+      </description>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+    //TryStatement[@Finally='true']/Block[position() = last()]
+      [count(*) = 0]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+        <priority>3</priority>
+
+      <example>
+  <![CDATA[
+// this is bad
+public void bar() {
+   try {
+      int x=2;
+   } finally {
+   }
+}
+  ]]>
+      </example>
+    </rule>
+
+
+    <rule name="EmptySwitchStatements"
+          message="Avoid empty switch statements"
+          class="net.sourceforge.pmd.rules.XPathRule">
+      <description>
+      Avoid empty switch statements.
+      </description>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+    //SwitchStatement[count(*) = 1]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+        <priority>3</priority>
+
+      <example>
+  <![CDATA[
+public class Foo {
+   public void bar() {
+      int x = 2;
+      switch (x) {
+         // once there was code here
+         // but it's been commented out or something
+      }
+   }
+}
+  ]]>
+      </example>
+      </rule>
+
+
+    <rule name="JumbledIncrementer"
+         message="Avoid using an outer loop incrementer in an inner loop for update expression"
+         class="net.sourceforge.pmd.rules.XPathRule">
+     <description>
+     Avoid jumbled loop incrementers - it's usually a mistake, and it's confusing even if it's what's intended.
+     </description>
+     <properties>
+         <property name="xpath">
+             <value>
+                 <![CDATA[
+    //ForStatement[ForUpdate//Name/@Name = 
+      ancestor::ForStatement/ForInit//VariableDeclaratorId/@Name]
+                 ]]>
+             </value>
+         </property>
+     </properties>
+        <priority>3</priority>
+
+     <example>
+ <![CDATA[
+public class JumbledIncrementerRule1 {
+   public void foo() {
+      for (int i = 0; i < 10; i++) {
+         for (int k = 0; k < 20; i++) {
+            System.out.println("Hello");
+         }
+      }
+   }
+}
+]]>
+     </example>
+     </rule>
+
+
+    <rule name="ForLoopShouldBeWhileLoop"
+          message="This for loop could be simplified to a while loop"
+          class="net.sourceforge.pmd.rules.XPathRule">
+      <description>
+      Some for loops can be simplified to while loops - this makes them more concise.
+      </description>
+    <properties>
+        <property name="xpath">
+            <value>
+                <![CDATA[
+    //ForStatement[count(*) > 1][not(ForInit)][not(ForUpdate)][not(LocalVariableDeclaration)]
+                ]]>
+            </value>
+        </property>
+    </properties>
+        <priority>3</priority>
+      <example>
+  <![CDATA[
+public class Foo {
+   void bar() {
+      for (;true;) true; // No Init or Update part, may as well be: while (true)
+   }
+}
+  ]]>
+      </example>
+    </rule>
+
+
+    <rule name="UnnecessaryConversionTemporaryRule"
+          message="Avoid unnecessary temporaries when converting primitives to Strings"
+          class="net.sourceforge.pmd.rules.UnnecessaryConversionTemporaryRule">
+      <description>
+      Avoid unnecessary temporaries when converting primitives to Strings
+      </description>
+        <priority>3</priority>
+      <example>
+  <![CDATA[
+public String convert(int x) {
+   // this wastes an object
+   String foo = new Integer(x).toString();
+   // this is better
+   return Integer.toString(x);
+}
+  ]]>
+      </example>
+    </rule>
+
+    <rule name="OverrideBothEqualsAndHashcodeRule"
+          message="Ensure you override both equals() and hashCode()"
+          class="net.sourceforge.pmd.rules.XPathRule">
+      <description>
+  Override both public boolean Object.equals(Object other), and public int Object.hashCode(), or override neither.  Even if you are inheriting a hashCode() from a parent class, consider implementing hashCode and explicitly delegating to your superclass.
+      </description>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+      //ClassDeclaration//MethodDeclarator
+      [
+      (@Name = 'equals'
+          and count(FormalParameters/*) = 1
+          and not(//MethodDeclarator[count(FormalParameters/*) = 0]
+          [@Name = 'hashCode'])
+       or
+      (@Name='hashCode'
+          and count(FormalParameters/*) = 0
+          and not(//MethodDeclarator[count(FormalParameters//Type/ReferenceType/ClassOrInterfaceType
+          [@Name = 'Object']) = 1]
+          [@Name = 'equals']))
+      )]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+        <priority>3</priority>
+
+      <example>
+  <![CDATA[
+// this is bad
+public class Bar {
+   public boolean equals(Object o) {
+      // do some comparison
+   }
+}
+
+// and so is this
+public class Baz {
+   public int hashCode() {
+      // return some hash value
+   }
+}
+
+// this is OK
+public class Foo {
+   public boolean equals(Object other) {
+      // do some comparison
+   }
+   public int hashCode() {
+      // return some hash value
+   }
+}
+  ]]>
+      </example>
+    </rule>
+
+    <rule name="DoubleCheckedLockingRule"
+          message="Double checked locking is not thread safe in Java."
+          class="net.sourceforge.pmd.rules.DoubleCheckedLockingRule">
+      <description>
+      Partially created objects can be returned by the Double Checked Locking pattern when used in Java.
+      An optimizing JRE may assign a reference to the baz variable before it creates the object the
+          reference is intended to point to.  For more details see http://www.javaworld.com/javaworld/jw-02-2001/jw-0209-double.html.
+      </description>
+        <priority>1</priority>
+      <example>
+  <![CDATA[
+public class Foo {
+   Object baz;
+   Object bar() {
+      if (baz == null) { //baz may be non-null yet not fully created
+         synchronized(this){
+            if (baz == null){
+               baz = new Object();
+            }
+         }
+      }
+      return baz;
+   }
+}
+  ]]>
+      </example>
+    </rule>
+
+    <rule name="ReturnFromFinallyBlock"
+          message="Avoid returning from a finally block"
+          class="net.sourceforge.pmd.rules.XPathRule">
+      <description>
+  Avoid returning from a finally block - this can discard exceptions.
+      </description>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+    //TryStatement[@Finally='true']/Block[position() = last()]//ReturnStatement
+                  ]]>
+              </value>
+          </property>
+      </properties>
+        <priority>3</priority>
+
+      <example>
+  <![CDATA[
+public class Bar {
+   public String bugga() {
+      try {
+         throw new Exception( "My Exception" );
+      } catch (Exception e) {
+         throw e;
+      } finally {
+         return "A. O. K."; // Very bad.
+      }
+   }
+}
+  ]]>
+      </example>
+    </rule>
+
+</ruleset>
+
+
+

@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta content="text/html; charset=iso-8859-1"
+ http-equiv="Content-Type">
+  <meta content="Dirk Moebius" name="Author">
+  <title>JavaStyle Plugin</title>
+</head>
+<body>
+<table width="100%" cellpadding="5" cellspacing="0" border="0">
+  <tbody>
+    <tr>
+      <td bgcolor="#ccccff" valign="CENTER"> <b><font size="+3">JavaStyle
+Plugin</font></b> </td>
+      <td bgcolor="#ccccff" valign="top">
+      <div align="right"> <font size="-1"> By Dirk M&ouml;bius (<a
+ href="mailto:dmoebius@gmx.net">dmoebius@gmx.net</a>)<br>
+Mike Atkinson (<a href="mailto:JavaStyle@ladyshot.demon.co.uk">JavaStyle@ladyshot.demon.co.uk</a>)<br>
+And Chris Seguin (<a href="mailto:seguin@acm.org">seguin@acm.org</a>) </font>
+      </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+<a href="#intro">Introduction</a><br>
+<a href="#usage">Usage</a><br>
+<a href="#bugs">Bugs</a><br>
+<a href="#comparison">Comparison JavaStyle vs. AStyle</a><br>
+<a href="#disclaimer">Disclaimer</a><br>
+<a href="CHANGELOG.txt">Change Log</a><br>
+<a href="LICENSE.txt">License Information</a><br>
+</p>
+<p><a name="intro"></a>
+</p>
+<h2>Introduction</h2>
+<p>
+The JavaStyle plugin has several different functions:<br>
+</p>
+<ul>
+  <li>reformats the current buffer, if it contains Java code.</li>
+  <li>checks for cut and paste</li>
+  <li>checks against coding standards</li>
+  <li>checks jar files for bugs</li>
+  <li>UML class diagrams for packages</li>
+  <li>Refactoring of Java source</li>
+  <li>Java source code Navigator</li>
+</ul>
+All the code is available at <a href="http://jrefactory.sf.net">
+http://jrefactory.sf.net</a>.
+<h2>Requirements</h2>
+<p>
+You need at least:
+</p>
+<ul>
+  <li>A Java 2 Runtime Environment Version 1.3 or higher (tested on
+1.4.2_01)</li>
+  <li>jEdit 4.2pre5 or higher</li>
+</ul>
+<p></p>
+<p>
+<i>Note: The <b>JRefactory</b> library is already contained in
+JavaStyle. There
+is no need to download it separately!</i>
+
+</p>
+<a name="usage"></a>
+
+
+<h2>Usage</h2>
+
+<h3>Pretty Printing</h3>
+
+<p>This is done by using the <b>PrettyPrinter</b> from the
+<b>JRefactory library</b> by Chris Seguin
+(<a href="mailto:seguin@acm.org">seguin@acm.org</a>) and Mike Atkinson (<a
+ href="mailto:JavaStyle@ladyshot.demon.co.uk"><font size="-1">JavaStyle@ladyshot.demon.co.uk</font></a>).<br>
+</p>
+
+<p>Select<span style="font-weight: bold;">
+Plugins-&gt;JavaStyle-&gt;Reformat Buffer</span><br>
+</p>
+
+<p>The current buffer is reformated according to the current JavaStyle
+settings. These settings may be different for each project in the
+"Project Viewer" plugin.<br>
+</p>
+
+<p>The code will be indented according to the indentation settings of
+the
+Java mode, ie. the options <b>Indent width</b> and <b>Soft tabs</b>.
+You can configure these options for the Java mode under
+<b>Utilities-&gt;Global Options-&gt;Editing</b>.
+</p>
+<p>
+</p>
+
+
+<h3>Changing the JavaStyle pretty printing options</h3>
+
+<p>You can change the style of the reformatted Java code with a myriad
+of options in the JavaStyle plugin options dialogs, available at 
+<b>Plugins-&gt;Plugin Options... </b>look at the tabs under the 
+<b>JavaStyle</b> tab. The dialogs have rich and self-explaining online
+help. Have a look!</p>
+
+<p>You can also change the options by selecting<span
+ style="font-weight: bold;"> Plugins-&gt;JavaStyle-&gt;Options...</span><br>
+</p>
+
+<p>The option pane will be shown (it might be a bit slow if there are
+lots of projects defined in the "Project Viewer" plugin)<span
+ style="font-weight: bold;"><br>
+</span>
+</p>
+
+
+<h3>Checking for Cut and Pasted Code</h3>
+
+<p>Select <span style="font-weight: bold;">Plugins-&gt;JavaStyle-&gt;JRefactory...</span>
+or click on the <span style="font-weight: bold;">JavaStyle</span> tab
+if the plugin is open. </p>
+
+<p>Select the "<span style="font-weight: bold;">Cut &amp; Paste Detector</span>"
+tab .</p>
+
+<p>There are three options:</p>
+<ul>
+  <li><b>Current</b> - the currently selected buffer (i.e. has cursor in it) as long as it contains Java source code.</li>
+  <li><b>Dir</b> - select a directory and check all Java source files in it.</li>
+  <li><b>Subdirs</b> - select a directory and check all Java source files in it and all sub-directories.</li>
+</ul>
+
+<p>For the last two&nbsp; cases a file selection window will appear.
+Select the base directory you require.</p>
+
+<p>After a few seconds (it should not be long even for a large amount of
+source code), a tree view of all the common sections of code will be
+shown. Selecting on these will show the Cut &amp; Pasted sections of
+code highlighted.</p>
+
+
+<h3>Checking against coding standards</h3>
+<p>Select <span style="font-weight: bold;">Plugins-&gt;JavaStyle-&gt;JRefactory...</span>
+or click on the <span style="font-weight: bold;">JavaStyle</span> tab
+if the plugin is open. </p>
+
+<p>Select the "<span style="font-weight: bold;">Coding standards</span>"
+tab .</p>
+
+<p>There are three options:</p>
+<ul>
+  <li><b>Current</b> - the currently selected buffer (i.e. has cursor in it) as long as it contains Java source code.</li>
+  <li><b>All Buffers</b> - all buffers containing Java source code</li>
+  <li><b>Dir</b> - select a directory and check all Java source files in it.</li>
+  <li><b>Subdirs</b> - select a directory and check all Java source files in it and all sub-directories</li>
+</ul>
+
+<p>For the last two&nbsp; cases a file selection window will appear.
+Select the base directory you require.</p>
+
+<p>At a rate few of files per second on average, a tree view of all the coding
+standard warnings will be shown. Any open buffers will also have the warnings
+shown in the gutter and the ErrorList plugin if loaded will also have the
+warnings. Selecting on these will go to the line with the warning.</p>
+
+<p>It is possible to select which of the coding standards to check by selecting
+them in the <b>Coding Standards</b> tab of the JavaStyle options pane.</p>
+
+
+
+<h2>More options</h2>
+
+<p>There are some other options available, but currently there is no fancy
+graphical configuration dialog for them available.</p>
+
+<p>However, you can look at the file</p>
+
+<blockquote><tt><b>$HOME</b>/.jedit/javastyle/.Refactory/pretty.settings</tt>
+</blockquote>
+for a full set of configurable options.
+<p></p>
+<blockquote bgcolor="#C0C0C0">
+(PS: The location of $HOME varies on the Windows platforms:)
+  <table border="1">
+    <tbody>
+      <tr>
+        <th>Operating system</th>
+        <th>Location of <tt>$HOME</tt> </th>
+      </tr>
+      <tr>
+        <td>Windows 95,98,ME</td>
+        <td><tt>C:\WINDOWS</tt> </td>
+      </tr>
+      <tr>
+        <td>Windows NT </td>
+        <td><tt>C:\WINNT\Profiles\<i>&lt;yourname&gt;</i></tt></td>
+      </tr>
+      <tr>
+        <td>Windows 2000,XP </td>
+        <td><tt>C:\Documents And Settings</tt> </td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p>Click <a href="csprettysettings.html">here</a> for a commented version
+of the property file.</p>
+
+<p>Note, that you can edit this file with jEdit. Saved changes will be
+used immediately.</p>
+
+<p>There are other files in the <tt>.Refactory</tt> directory -- please
+leave them untouched!</p>
+
+<p><b>C-style comments at end of lines</b></p>
+
+<blockquote> If you put a C-style comment <tt>/* */</tt> at the end of
+a line, to keept them on that line you have to select the "Treat
+C-Style comments as single-line"&nbsp; and unselect "Put end-line
+comments on a new line". E.g., if you have this:
+  <blockquote> <tt>String s = "hello"; /* this is a starred comment */<br>
+System.out.println(s); // next line</tt> </blockquote>
+it will get formatted like this:
+  <blockquote> <tt>String s = "hello";<br>
+/* this is a starred comment */<br>
+System.out.println(s); // next line</tt> </blockquote>
+if either "Treat C-Style comments as single-line" is unticked or "Put
+end-line comments on a new line" is ticked.<br>
+  <br>
+</blockquote>
+<a name="bugs"></a>
+
+
+<h2>Bugs</h2>
+
+<p><b>Attention! These software contains bugs. Use it at your own risk.
+I have no responsibility for whatever happens to your code, if you use
+this plugin on it. You may even loose all of your code!</b>
+</p>
+
+<p>--- That said, the number of <i>known</i> bugs in JavaStyle and the
+underlying JRefactory library is surprisingly small. They are listed
+below.
+</p>
+<blockquote>
+
+
+<p>If you have found a bug in JavaStyle, please mail it to <a
+ href="mailto:JavaStyle@ladyshot.demon.co.uk">me</a>.
+If you are technically skilled in issues of programming,
+and you get the vague impression that the bug is not in the plugin
+layer, but in the underlying PrettyPrinter library, please inform <a
+ href="mailto:JavaStyle@ladyshot.demon.co.uk">Mike Atkinson</a>,
+the maintainer of the PrettyPrinter.<br>
+Remember, I provide only the plugin part of the PrettyPrinter,
+while Chris is responsible for the pretty printing itself. </p>
+
+<p>Mike Atkinson (<a href="mailto:JavaStyle@ladyshot.demon.co.uk"><font
+ size="-1">JavaStyle@ladyshot.demon.co.uk</font></a>) </p>
+</blockquote>
+
+
+
+<h2>Known bugs</h2>
+
+<p>Note: If you get the error<br>
+<strong><blockquote> <tt>java.lang.NoSuchMethodError:
+org.acm.seguin.util.FileSettings.getSettingsRoot()Ljava/io/File;<br>
+Try updating to a newwer version of the plugin</tt></blockquote></strong>
+then you have an old version of jrefactory.jar installed. Remove it
+from your jars directory.</p>
+
+<table cellpadding="3" cellspacing="1" border="0" width="100%">
+  <tbody>
+    <tr>
+      <td colspan="2"><b><a href="http://sourceforge.net/tracker/?group_id=588&amp;atid=565475">jEdit - Plugin Bugs</a></b></td>
+    </tr>
+    <tr bgcolor="#dacaca">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=746217&amp;group_id=588&amp;atid=565475">746217</a></td>
+      <td>JavaStyle reformatting exception</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=588614&amp;group_id=588&amp;atid=565475">588614</a></td>
+      <td>JavaStyle: localized date</td>
+    </tr>
+
+
+    <tr>
+      <td colspan="2"><b><a href="http://sourceforge.net/tracker/?group_id=13219&amp;atid=113219">JRefactory - Bugs</a></b></td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=815070&amp;group_id=13219&amp;atid=113219">693738</a></td>
+      <td>Non-ascii characters get replaced by '?'</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=813879&amp;group_id=13219&amp;atid=113219">813879</a></td>
+      <td>Rename field does not detect downcast</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=693738&amp;group_id=13219&amp;atid=113219">693738</a></td>
+      <td>Header re-inserted when imports re-ordered</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=689870&amp;group_id=13219&amp;atid=113219">689870</a></td>
+      <td>ExtractMethod produces wrong code on anonymous inner classes</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=678029&amp;group_id=13219&amp;atid=113219">678029</a></td>
+      <td>Pretty printer hotkey clashes</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=658953&amp;group_id=13219&amp;atid=113219">658953</a></td>
+      <td>No refactoring menu in NetBeans 3.4.1RC1</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=595863&amp;group_id=13219&amp;atid=113219">595863</a></td>
+      <td>No handler for Access Denied expections</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=547257&amp;group_id=13219&amp;atid=113219">547257</a></td>
+      <td>Javadoc wordwrap doesn't handle tags</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=547172&amp;group_id=13219&amp;atid=113219">547172</a></td>
+      <td>Backup file loses date + time</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=517495&amp;group_id=13219&amp;atid=113219">517495</a></td>
+      <td>Don't cast (smart) block comment option</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=516386&amp;group_id=13219&amp;atid=113219">516386</a></td>
+      <td>Can't parse if throws not in description</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=499682&amp;group_id=13219&amp;atid=113219">499682</a></td>
+      <td>Move Class is eating code</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=498619&amp;group_id=13219&amp;atid=113219">498619</a></td>
+      <td>JBuilder designer missing events</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=485536&amp;group_id=13219&amp;atid=113219">485536</a></td>
+      <td>Window loosing it's content</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=485535&amp;group_id=13219&amp;atid=113219">485535</a></td>
+      <td>Exception on Refactoring</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=484816&amp;group_id=13219&amp;atid=113219">484816</a></td>
+      <td>Package &amp; Library Problem</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=465607&amp;group_id=13219&amp;atid=113219">465607</a></td>
+      <td>JBuilder: UML blocks content pane</td>
+    </tr>
+    <tr bgcolor="#dababa">
+      <td><a href="http://sourceforge.net/tracker/?func=detail&amp;aid=456861&amp;group_id=13219&amp;atid=113219">456861</a></td>
+      <td>Problem with extending inner classes</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<a name="comparison"></a>
+<h2>Comparison JavaStyle vs. AStyle</h2>
+<p>
+<b>AStyle</b> is another source code beautifier plugin for jEdit. You
+might wonder why there are two beautifiers, and in what features they differ.
+Here's a short comparison:
+</p>
+<p>
+The main difference is complexity.
+</p>
+<p>
+<b>AStyle</b> is a line-by-line beautifier, that looks for certain
+keywords and structure characters like '{', remembers the current indent
+level and indents each line one a one-by-one basis. This is a fast and
+simple approach, but you cannot do certain things, like sorting methods,
+etc.
+</p>
+<p>
+<b>JavaStyle</b> is much more complex. It contains a full blown Java
+parser, similar to the javac compiler. It reads in the Java source code
+as a whole, builds an object tree, and effectively "redraws" the whole
+source code from scratch. The advantage is that you can to a lot more
+to the object tree before it is written out, for example sort methods
+by access modifier (public methods first), automatically generate JavaDoc
+tags etc. (You'll notice that JavaStyle has many more options than
+AStyle.) The disadvantage is that the source needs to be compilable
+before you can beautify it. AStyle does not have this requirement.
+</p>
+<table border="1">
+  <tbody>
+    <tr>
+      <td><br>
+      </td>
+      <td><b>AStyle</b></td>
+      <td><b>JavaStyle</b></td>
+    </tr>
+    <tr>
+      <td><b>Advantages</b></td>
+      <td>
+      <ul>
+        <li>faster </li>
+        <li>smaller </li>
+        <li>prefers to preserve existing spacing, e.g. separation lines
+        </li>
+        <li>formats half finished source </li>
+        <li>for Java, C and C++ code </li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+        <li>automatic creation of JavaDoc stubs </li>
+        <li>sort methods, inner classes and fields </li>
+        <li>reformat comments, e.g. word-wrap </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><b>Disadvantages</b></td>
+      <td>
+      <ul>
+        <li>only does spacing and indentation </li>
+      </ul>
+      </td>
+      <td>
+      <ul>
+        <li>source code needs to be compilable </li>
+        <li>Java source code only </li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+So, if you want simply to reindent your code with tabs or spaces, I
+would go for <b>AStyle</b>. But if you want to enforce a certain
+structure on your code, I would use <b>JavaStyle</b>. Some users
+complained, that sometimes JavaStyle does "too much", and that it
+cannot be switched off. For them, the AStyle plugin should be more
+suitable.
+</p>
+<br>
+<a name="disclaimer"></a>
+<h2>Disclaimer</h2>
+<p>
+This product includes software developed by the <b>JRefactory</b>
+(<a href="http://www.sourceforge.org/projects/jrefactory">
+http://www.sourceforge.org/projects/jrefactory</a>).
+</p>
+<br>
+<hr size="1" width="100%">
+<font size="-2">All contents copyright (c) 2000,2001,2002 Dirk M&ouml;bius
+&lt;<a href="mailto:dmoebius@gmx.net">dmoebius@gmx.net</a>&gt; (c) 2003
+Mike Atkinson <small>(</small></font><small><a
+ href="mailto:JavaStyle@ladyshot.demon.co.uk"><font size="-1"><small>JavaStyle@ladyshot.demon.co.uk</small></font></a></small><font
+ size="-2"><small>)</small>
+</font>
+</body>
+</html>

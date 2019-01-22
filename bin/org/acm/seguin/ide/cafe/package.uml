@@ -1,0 +1,15 @@
+V[1.1:org.acm.seguin.ide.cafe]
+S[org.acm.seguin.ide.cafe:CafeExtractMethod,org.acm.seguin.uml.refactor:ExtractMethodDialog]{2:(425,565),(486,454)}
+S[org.acm.seguin.ide.cafe:CafePrettyPrinter,org.acm.seguin.pretty:PrettyPrintFromIDE]{2:(118,266),(112,210)}
+S[org.acm.seguin.ide.cafe:CafeExtractMethod,java.awt.event:ActionListener]{2:(377,565),(337,115)}
+S[org.acm.seguin.ide.cafe:CafePrettyPrinter,java.awt.event:ActionListener]{2:(181,266),(292,115)}
+S[org.acm.seguin.ide.cafe:CafeSetup,<unknown>:com.symantec.itools.vcafe.openapi.pluginapi]{2:(906,187),(911,102)}
+S[org.acm.seguin.ide.cafe:ReloadActionAdapter,java.awt.event:ActionListener]{2:(237,459),(319,115)}
+P[org.acm.seguin.ide.cafe:CafeExtractMethod]{282,565}
+P[org.acm.seguin.ide.cafe:CafePrettyPrinter]{20,266}
+P[org.acm.seguin.ide.cafe:CafeSetup]{796,187}
+P[org.acm.seguin.ide.cafe:ReloadActionAdapter]{100,459}
+P[org.acm.seguin.uml.refactor:ExtractMethodDialog]{486,10}
+P[org.acm.seguin.pretty:PrettyPrintFromIDE]{7,3}
+P[java.awt.event:ActionListener]{231,5}
+P[<unknown>:com.symantec.itools.vcafe.openapi.pluginapi]{776,10}

@@ -1,0 +1,15 @@
+    1  /**
+    2   *  Description of the Class
+    3   *
+    4   *@author    Chris Seguin
+    5   */
+    6  public class SingleLineComments {
+    7  	/**
+    8  	 *  Description of the Method
+    9  	 */
+   10  	public void method() {
+   11  		//  This is a normal comment
+   12  //		int d = 1;
+   13  		//  That was commented out code
+   14  	}
+   15  }

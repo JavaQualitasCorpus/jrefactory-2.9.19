@@ -1,0 +1,507 @@
+ChangeLog for JavaStyle plugin
+===========================================================================
+
+
+jEdit JavaStyle Version 2.9
+===========================
+
+JRefactory Version 2.9.18
+-------------------------
+    o Fixed JRefactory bugs:
+          + 944638 "javadoc with embedded // comments".
+            The fix ensures that 'C' style comments are preserved within javadoc comments.
+    o Added refactorings to Netbeans plugin.
+    o Added file being pretty printed to Ant task exception output.
+    o Fix bug in pretty printing:
+      public @interface Preliminary { }
+    o Updated to version 0.7.2 of FindBugs.
+    o More sophisticated searching for findbugs plugins.
+    o Coding Standards viewer now has separate subtrees for bugs that can be fixed with refactorings.
+    o jEdit plugin now a single Jar file.
+    o Fix selections from cut and paste detector from Netbeans.
+
+
+JRefactory Version 2.9.17
+-------------------------
+    o Ensure that rename field is only offered for fields (not method local variable).
+    o Fixed bug that caused stubs to be created with no entries for some classes (mainly generic classes and interfaces).
+    o Fixed bug that caused stubs to be created with no entries for methods of interfaces.
+    o Swing load status is now always visible while loading is taking place
+    o Allow other threads some processing time while perform the soruce file parsing.
+    o Automatically switch between 1.4.2 and 1.5.0 when generating file summaries.
+    o Fixed bugs in moving UMLTypes around UMLPackage panel.
+    o Updated build files to make building NetBeans easier.
+    o Add addAnnotation() and clearAnnotations() to IDEInterface.
+    o Update to Netbeans plugin - added Annotations.
+    o Updated Netbeans with a dummy class to hold persistent data.
+    o Updated Netbeans with persistence.
+
+
+
+JRefactory Version 2.9.16
+-------------------------
+    o Automatically switch between 1.4.2 and 1.5.0 when generating stubs from JDK src.zip
+    o Improved Netbeans support, major integration complete, still lots of minor things to do.
+
+
+JRefactory Version 2.9.15
+-------------------------
+    o Fixed JRefactory bugs:
+          + 929006 "param.descr does not work for constructors".
+            now not having a "param.descr" or having "param.descr=" in the settings file will cause @param tags to be NOT generated.
+          + 897760 "Basically nonfunctional - UML diagram attempt".
+          + 877400 "pretty.settings end.line property comments need a fix".
+            Added the following:
+            # End of line character(s) - either CR, CRNL, or NL
+            # * CR - carriage return
+            # * NL - newline
+            # * LF - newline/linefeed
+            # * CRNL - carriage return and newline
+            # * MAC - mac carriage return
+            # * UNIX - unix newline
+            # * DOS - carriage return and newline
+            # * ASIS - leave line endings alone - NOT IMPLEMENTED
+            end.line=CRNL
+    o Fixed sorting so it works for enums and Annotation type definitions.
+    o Fixed parsing and pretty printing of Annotation type definitions.
+    o Added fix to allow multiple semicolons at the end of import statements
+    o Fixed Line Count Visitor for annotations.
+    o Fixed Summary Load Visitor for annotations (it won't throw an exception, but probably not good enough for refactoring with annotations).
+    o Fixed (I hope) the build_jedit.xml build.
+    o Fixed regression with pretty printing from JBuilder, introduced a couple of versions ago.
+    o Improved Netbeans support
+
+
+JRefactory Version 2.9.14
+-------------------------
+    o Added many fixes to the standalone JRefactory demo.
+
+
+JRefactory Version 2.9.13 - ant task release only
+-------------------------
+    o Fixed JRefactory bugs:
+          + 861011 "Pretty Ant task - CVSUtil daylight savings time problem".
+            Added a timeZone attribute to the ant task. Clarified ant task comments
+          + 860617 "Pretty Ant task write cr at end of all lines".
+
+
+JRefactory Version 2.9.12
+-------------------------
+    o Fixed dragging of Types in UML Viewer.
+    o Added JUnit tests for RenameMethod refactoring
+    o Updated JUnit tests for RenameField to show the problem with bug
+    o 813879 "rename field does not detect downcast"
+    o Minor update to Navigator to put class name first in tree entry.
+    o Fixed "show" and "hide" buttons on JRefactory tab.
+    o Added ExtractMethod action to Refactoring menus - does not work yet.
+    o For those refactorings that fail JUnit tests show warning dialog before activation.
+    o Made calls to JRefactory and Coding Standards functions select JavaStyle plugin and switch to appropriate tab.
+    o Fixed enabling of the code Navigator.
+    o Added more icons mainly for interfaces.
+    o Fixed package selector panel tree for classes without a package statement.
+    o Added a popup menu to the package selector window with Remove module as its only item.
+      Remove module does not currently remove the package summaries that made it up.
+    o If JAI is present enable saving of UML diagrams in PNG.
+    o jEdit only: keep track of which project is loaded.
+    o Fixed popup "No problems found" coming up twice.
+    o Rewrote UML diagrams to made them look better and the code be easier to use and modify.
+    o Refactored actions.
+    o Made action usage more consistent across usages.
+    o Added actions (all in net.sourceforge.jrefactory.action):
+          + ShowSourceAction
+          + LoadPackageAction
+          + SaveImageAction
+    o jEdit only: added messages JavaStylePlugin$JavaAST and JavaStylePlugin$JavaTree.
+      These are EditBus messages offering the parsed Java Abstract Syntax Tree and the tree used by the Navigator respectively.
+      There may be a 5 second delay between typing a character and the tree being updated
+    o Fixed JRefactory bugs:
+          + 845897 "Cannot access classes from tree"
+
+
+JRefactory Version 2.9.11
+-------------------------
+    o Added ability to parse JSP files, it works for simple JSP files.
+      The idea is to pretty print only the Java portions of the JSP files, This does not work yet.
+    o Added ability to call refactoring methods directly from the Coding Standards deficiency report.
+      This only works for method names that are too short at present. Soon other refactorings will be available
+    o Added a new refactoring Rename Method. This has not yet been fully tested.
+    o jEdit only: added greying out of menu items that are not available.
+    o jEdit only: added ability to refactor from the jEdit main view (i.e. as well as from the UML viewer).
+    o Removed EditorOperations and merged those functions with the IDEInterface.
+
+
+JRefactory Version 2.9.10
+-------------------------
+    o This release was the first for some time of a Netbeans IDE plugin.
+
+
+JRefactory Version 2.9.9
+-------------------------
+    o Fixed JRefactory bugs:
+          + 842298 "checkbox that is not enabled... "JRefactory/Spacing/Add Spacing around Operators""
+
+
+JRefactory Version 2.9.8
+-------------------------
+    o Fixed JRefactory bugs:
+          + 842146 "Author and other tags not editable."
+
+
+JRefactory Version 2.9.7
+-------------------------
+    o Fixed bug in java1_5.jjt that tested useAssert rather than generics when checking whether enum is an identifier or keyword.
+    o Fixed bug that caused the RefactoryInstaller to be called twice in JBuilder plugin.
+    o Fixed bug that caused all plugins to not load the correct jdk version when installing.
+    o Fixed bug that meant that the JBuilder not to be able to load the IDEproperties.
+
+
+JRefactory Version 2.9.6
+-------------------------
+    o Fixed bug in JBuilder pretty printing
+
+
+JRefactory Version 2.9.5
+-------------------------
+    o Improved the Java parser mainly thanks to Sreeni.
+    o Turned on "OPTIMIZE_TOKEN_MANAGER=true" in the Java parser.
+    o Fixed jEdit IDE JavaStyle Plugin bugs:
+          + 746217 "JavaStyle reformatting exception." closed as it works for me
+    o Fixed JRefactory bugs:
+          + 693738 "Header re-inserted when imports re-ordered."
+          + 517495 "Don't cast (smart) block comment option."
+          + 516386 "Can't parse if throws not in description."
+
+
+JRefactory Version 2.9.4
+-------------------------
+    o Added parsing and pretty printing of annotations as defined in the JSR 175 public review.
+      Still a few minor problems with pretty printing annotations, but in general it seems to work well.
+    o Fixed JRefactory bugs:
+          + 831399 "Source code with Chinese characters."
+          + 815070 "Non-ascii characters get replaced by '?'."
+
+
+JRefactory Version 2.9.3
+-------------------------
+    o Added a Navigator Options dialog - only option is to turn off refresh as you type.
+    o Updated jEdit JavaStyle help documentation.
+    o Fixed crash in opening option dialog from "Plugins->Plugin Options..".
+    o Fixed pretty.settings the 4.2 version of the settings was added twice.
+    o Added Feature Request:
+          + 465236 ""throws" indentation."
+
+
+JRefactory Version 2.9.2
+-------------------------
+    o Changed the help area in the Options pane to a JTextPane and enabled html help text.
+    o Updated JUnit tests for RFE 446056 and RFE 446058.
+    o Made the Navigator a common component, now called from the Stand-Alone application as well as jEdit Plugin.
+    o Fixed jEdit IDE JavaStyle Plugin bugs:
+          + 833328 "JavaStyle sort imports ignores same line comments."
+    o Fixed JRefactory bugs:
+          + 837096 "ASTIdentifier sometimes does not have beginLine set."
+          + 837078 "StubGenTraversal - infinite loop."
+    o Added Feature Request:
+          + 575876 "comment start formatting."
+          + 464480 "shorter comments."
+          + 446058 "Sort exception names in "throws"."
+          + 446056 "Sort interface names in "implements"."
+          + 812738 "Space between operators in expressions."
+            This seems to have been fixed for some time, but I've only now closed the RFE.
+
+
+JRefactory Version 2.9.1
+-------------------------
+    o Updated JUnit tests for RFE 820319.
+    o Separated out parser and ast so that they do not depend on other packages.
+    o Added loadIcon() to IDEInterface.
+    o Added clear icon button to CPD and Coding Standards viewers.
+    o More work on RFE 820319, now complete except for named variables.
+    o Improved Navigator in jEdit - seems to work quite well.
+    o Improved the Package Selection Panel use of a tree.
+    o Fixed JRefactory IDE bugs:
+          + 821325 "source code with Chinese characters."
+            This is a longstanding bug that has been reported several times but never with an example, thanks to JiaYun and his excellent bug report I've finally managed to track it down.
+            It is probably the same bug as 815070 "Non-ascii characters get replaced by '?'", but I can't tell.
+    o Fixed jEdit IDE JavaStyle Plugin bugs:
+          + 812738 "JavaStyle left aligns broken lines with comments."
+
+
+JRefactory Version 2.9.0
+-------------------------
+    o Added a Navigator to jEdit - more work to be done.
+    o Changed the Package Selection Panel to use a tree - more work to be done.
+    o Added Feature Request:
+          + 820319 "Improve automatic text generation"
+            This is almost complete.
+    o Fixed JRefactory IDE bugs:
+          + 821325 "build.sysclasspath may not be present causing exception."
+          + 821336 "Fix jEdit source release to obey jEdit plugin standard.."
+          + 822301 "Coding Standards options examples and description."
+          + 822302 "path to custom rules uses pmd property."
+          + 822305 "Load project coding standards rules."
+          + 825576 "single line comments give wrong indentation with params."
+
+
+
+jEdit JavaStyle Version 2.8
+===========================
+
+* This version is fully integrated into JRefactory and so takes its version
+  numbering system. There are many major changes since JavaStyle 1.4, including
+  adding Coding Standards support, Bug Finding in Jars, Cut&Paste detection,
+  Java Abstract Syntax Tree viewer and XPath executor and multiple project
+  support.
+
+JRefactory Version 2.8.09 (Final)
+--------------------------------
+This is the final release in the 2.8 series.
+
+* Fixed JRefactory IDE bugs:
+    o 820152 "The CPD does not check all open buffers."
+    o 820108 "Better buttons to select operation of Viewers."
+    o 820101 "Coding Standards treetable needs refresh during search."
+
+
+JRefactory Version 2.8.08 (RC2)
+-------------------------------
+* Fixed JRefactory IDE bugs:
+    o 818694 "CS viewer shows files with no warnings."
+    o 818697 "CS Viewer does not use a JFileChooser"
+    o 818721 "JEDIT: saving buffers should not give "no errors found""
+    o 819308 "Unused imports checking misses some import uses."
+    o 819321 "CS Viewer need to know the file path for a buffer"
+    o 819337 "Misc IDEInterface changes"
+    o 819358 "Allow parent frame to be set after the panes are created"
+    o 819363 "Fix coding standard viewer warnings after buffer changes"
+    o 819771 "Printing settings not correct 1st time after install"
+    o 819773 "Stand-alone application installs twice"
+
+* Fixed JRefactory Pretty Printer bugs:
+    o 819305 "JavaCC 1.5 ForLookup fails for array variable"
+
+
+JRefactory Version 2.8.07 (RC1)
+-------------------------------
+* Fixed JRefactory Pretty Printer bugs:
+    o 813428 "Remove brackets produces invalid Java code"
+    o 813430 "tabular alignment fails.""
+    o 539934 "Final parameter alignment"
+    o 500410 "Incorrectly aligned closing ')'"
+    o 465568 "Parser problem with inner classes"
+* Now has a partial Netbeans plugin working.
+* Split JavaStyle.props so that the common can be included in all builds
+* Added src/settings/.JRefactory/pretty.settings which has better setting defaults that those used by the unit tests.
+* Updated Common->plugin interface
+* Fixed most of the layout bugs in the Options dialogs
+* Changes to build file so that it builds on Gump.
+* More changes to the build file to add ant targets.
+
+
+JRefactory Version 2.8.06
+-------------------------
+* Fix various problems with the release, it should now build from the "full" release.
+* Try and fix the NetBeans JRefactoryModeule.jar, still not working.
+* A few minor UI tweeks.
+* Remove dependences on jEdit from classes outside the ide/jedit heirarchy.
+* Added a few missing files to CVS.
+* Fixed regression where single line comment at end of file causes a crash.
+
+
+JRefactory Version 2.8.05
+-------------------------
+* Added checkOnSave option to allow Coding Standards checking every time a buffer is saved.
+* Fixed lots of PMD regressions
+* Fixed JRefactory Pretty Printer bugs:
+    o 810715 "Null Pointer Exception on remove brackets around single line"
+* Refactored code so that the CPD, PMD, etc. GUI panels are now in ide/common, and the jEdit plugin uses those.
+* Modified the stand-alone JRefactory application so that it uses the new components.
+
+
+JRefactory Version 2.8.04
+-------------------------
+* fixed regression in pretty printing that caused "@param paramName descr" to be printed as "@paramparamName descr" if the value of  "javadoc.indent" setting is zero.
+* fixed regression in the Option panes that caused numbers to be save as one less than the set value!
+* fixed bug that if a non-existant file were selected as an additional PMD ruleset, the displaying the option pane would fail, hence it could not be changed.
+* fixed getting of correct PropertiesFile for the project and JRefactory module. All PMD settings are now in pmd.settings, with only the parts modified from the defaults in the project directories.
+* Fixed regression in RenameParentVisitor.
+* Fixed several more PMD regressions.
+
+
+JRefactory Version 2.8.03
+-------------------------
+* bug fixes mainly to the Coding Standards part.
+
+
+JRefactory Version 2.8.02
+-------------------------
+* Major additions:
+    o Cut and Paste detector (thanks to PMD http://sourceforge.net/projects/pmd)
+    o Find Bugs (thanks to findbugs-0.6.6 http://www.cs.umd.edu/~pugh/java/bugs/)
+    o Coding standards checking (thanks to PMD http://sourceforge.net/projects/pmd)
+    o Abstract Syntax Tree viewing and XPath queries (thanks to PMD http://sourceforge.net/projects/pmd)
+* (options) Improved the option dialogs, now includes some PMD options in a separate JTagPane
+* (Coding Standards) imported the regression tests from PMD and ran them. A few still fail :-(
+* (Parser) Fixed bugs in how SimpleNode works.
+* (Parser) Fixed two bugs in equals() methods which caused AST nodes that where not equal to be evaluated as the same.
+* (Parser) All AST nodes that are created programatically now have their type IDs set.
+* (Parser) now handles cntrl-z at the end of files
+* (Parser) make ForLookahead a Java function so that it need not be handled by the Visitor pattern.
+* (JavaStyle) moved the JavaStyle plugin to org.acm.seguin.ide.jedit
+* (JavaStyle) created a separate JavaStyle.jar containing only those classes required for the jEdit plugin.
+
+
+JRefactory Version 2.8.01
+-------------------------
+* (Pretty Printer) Added ability to have multiple projects. each with their own pretty.settings file.
+* Each project inherits from the pretty.settings of the "default" project.
+
+
+JRefactory Version 2.8.00
+-------------------------
+* (UML Diagrams) Fixed scaling of target types of associations.
+* (UML Diagrams) When associations are removed, if the type has no other associations or other links to it and it is contained in a different package it is removed from the diagram.
+* Fixed Unicode support (I hope) by converting from Input/Output Streams to Reader/Writer.
+* Changed ModifierHolder to be an interface, created new AccessNode class that implements it to be the base class of AST nodes that have modifiers. Summary also now implements ModifierHolder. These changes make parsing faster and the node graph take less memory, also small reduction in code size.
+* (Parser) Changed to be non-static
+* (Parser) Updated to JDK 1.5 generics as in the Public Draft Specification 2.0.
+* (Coding Standards) Integrated PMD into JRefactory codebase, the PMD code now uses the JRefactory parser. The parse trees are very similar so almost all PMD coding standard xml files will work with JRefactory.
+* (Summary) added parsing of .class files using reflection.
+* Fixed JRefactory bugs:
+    o 531379 JRefactory do'nt work under Japanese.
+    o 574070 Error pretty print (EOF on comment)
+
+
+JRefactory Version 2.7.07
+-------------------------
+* Fixed regression that meant that the JBuilder plugin was not being compiled.
+* Updated to the latest (version 9) of JBuilder API.
+* Updated to the latest (3.5) of Netbeans API.
+
+
+
+
+Version 1.4
+===========
+* updated to use JRefactory library version 2.7.06
+* uses new ErrorList API
+* uses jEdit 4.2 deferred loading feature
+* requires jEdit 4.2pre2 or higher
+* requires ErrorList 1.3
+
+
+Version 1.3
+===========
+* updated to use JRefactory library version 2.7.06
+* errors output to ErrorList
+* errors do not bring up a window unless ErrorList is not available
+* jedit bugfixes #549394, #551481, #570143, #692442, #728002
+* jedit bugs closed as there is not enough information to fix them #746217
+* requires jEdit 4.0pre6 to 4.1final
+* requires ErrorList 1.2.3
+
+Version 1.2
+===========
+* updated to JRefactory library version 2.6.33
+* updated to jEdit 4.0 APIs
+* new option "Indent case statements"
+* new option "Lines after package statement"
+* new option "Lines before class statement"
+* new option "Additional blank lines before and after local variable
+  declarations"
+* new option "Remove brackets around single-line blocks"
+* new option "Sort by final status (move final fields and methods to the
+  top/bottom)"
+* new option "Sort alphabetical"
+* Ant instead of JMK makefile
+* bugfixes: #483765, #491126, #507081, #519753, #519757
+* requires jEdit 4.0pre6 or higher
+
+
+Version 1.1
+===========
+* updated to JRefactory library version 2.6.25
+* no longer redistributes the source of the JRefactory library. If you want the
+  source, please download it from http://jrefactory.sf.net
+* new JavaDoc stubs for JUnit methods
+* new JavaDoc options: "Document inner classes", "Keep all JavaDoc comments"
+  (even at illegal places), "Allow single line JavaDoc comments"
+* new bracket indenting options: indent C style, Pascal style or Emacs style,
+  "Create brackets around single-line blocks", "Put empty methods and
+  constructors on a single line", "Indent continued lines"
+* three separate options for "else/catch/throws starts on a new line"
+* new options for C-style comments
+* new sort options to sort main methods and/or field initializers to the top
+* new options for alignment of field definitions
+* bugfix: #410730 Current line is not retained if "Format on Save" is on
+* bugfix: #449470 JavaStyle fails for method named "test1"
+* bugfix: #440714 Markers are not restored after beautify
+* bugfix: #435640 JavaStyle javadocs anon inner classes (JavaStyle now has an
+  option to supress this.)
+* bugfix: @variable@ placeholders (e.g. for Ant) are now preserved in JavaDoc
+  comments
+* bugfix: formatted text inside <pre> tags in JavaDoc is now preserved
+* bugfix: unicode chars > 0xFF are no longer replaced by '?'
+* bugfix: Array initializers get indented too much
+* requires jEdit 3.2pre9 or higher
+
+
+Version 1.0
+===========
+* new sort options
+* better english (thanks to Steve Jakob)
+* bugfix: SettingNotFoundException if param/return tags were marked "not required"
+* bugfix: IllegalAccessError if compiled with IBM JDK 1.1.x
+* requires jEdit 3.0final or higher
+
+
+Version 0.4.1
+===========
+* bugfix: option "Spaces between JavaDoc star and text" changes were not saved
+* bugfix: option "Line up names and descriptions" didn't work
+* requires jEdit 3.0pre5 or higher
+
+
+Version 0.4
+===========
+* new option panes for JavaDoc stubs, JavaDoc tags, and single line comments
+* new option "Reformat when buffer is saved"
+* new option "'throws' starts on a new line" (Chris Seguin)
+* new option "Method brackets are on lines by themselves" (Chris Seguin)
+* new option "Ignore lines shorter than xxx characters" on JavaDoc wordwrap (Chris Seguin)
+* new option "Spaces between JavaDoc star and text" (Chris Seguin)
+* new option "Additional space between JavaDoc tag and star" (Chris Seguin)
+* new option "Line up names and descriptions" in JavaDoc comments (Chris Seguin)
+* restores the current cursor position on reformat
+* now regards jEdit3.0 indentSize property
+* fixed newline bug (entire buffer is double spaced on save)
+* updated to JREFactory 2.5.38
+* requires jEdit 3.0pre5 or higher
+
+
+Version 0.3.1
+===========
+* updated to JREFactory 2.5.20
+* requires jEdit 2.6pre7 or higher
+
+
+Version 0.3
+===========
+* switched to the PrettyPrinter library, which is part of the
+  JREFactory suite 2.5.10 by Chris Seguin <seguin@acm.org>.
+* therefore a different set of formatting options
+* new author and maintainer: Dirk Moebius <dmoebius@gmx.net>
+* requires JDK 1.1.x and jEdit 2.5.1 or higher
+
+
+Version 0.2
+===========
+* bugfix: for DOS end of lines (/n/r) which could raise troubles with jEdit
+* more complete JavaDoc
+* some error corrections on index.html
+* requires JDK 1.1.x and jEdit 2.1pre3 or higher
+
+
+Version 0.1
+===========
+* initial release by Andreas Schaefer <andreas.schaefer@madplanet.com>

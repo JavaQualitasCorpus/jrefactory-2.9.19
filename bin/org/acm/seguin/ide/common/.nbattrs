@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="CodingStandardsViewer.java">
+        <attr name="class_dependency_java.lang.Runnable" stringvalue="CodingStandardsViewer.RunGotoViolation"/>
+        <attr name="class_dependency_javax.swing.JPanel" stringvalue="CodingStandardsViewer"/>
+        <attr name="class_dependency_javax.swing.tree.DefaultMutableTreeNode" stringvalue="CodingStandardsViewer.Violation;CodingStandardsViewer.Violations"/>
+        <attr name="class_dependency_javax.swing.tree.DefaultTreeCellRenderer" stringvalue="CodingStandardsViewer.CSRenderer"/>
+    </fileobject>
+</attributes>

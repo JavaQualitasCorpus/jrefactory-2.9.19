@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.0//EN" "http://www.netbeans.org/dtds/filesystem-1_0.dtd">
+
+<filesystem>
+    <!-- Installing JRefactory menu actions: -->
+<!--
+    <folder name="Menu">
+        <folder name="Tools">
+            <folder name="JavaStyle">
+               <file name="org-acm-seguin-ide-netbeans-PrettyPrinterAction.instance"/>
+               <file name="org-acm-seguin-ide-netbeans-JRefactoryAction.instance"/>
+               <folder name="Coding Standards">
+                  <file name="org-acm-seguin-ide-netbeans-CSCheckBufferAction.instance"/>
+                  <file name="org-acm-seguin-ide-netbeans-CSCheckAllBuffersAction.instance"/>
+                  <file name="org-acm-seguin-ide-netbeans-CSCheckDirAction.instance"/>
+                  <file name="org-acm-seguin-ide-netbeans-CSCheckDirRecursiveAction.instance"/>
+               </folder>
+               <folder name="Detect Duplicate Code">
+                  <file name="org-acm-seguin-ide-netbeans-CPDCheckBufferAction.instance"/>
+                  <file name="org-acm-seguin-ide-netbeans-CPDCheckAllBuffersAction.instance"/>
+                  <file name="org-acm-seguin-ide-netbeans-CPDCheckDirAction.instance"/>
+                  <file name="org-acm-seguin-ide-netbeans-CPDCheckDirRecursiveAction.instance"/>
+               </folder>
+               <file name="org-acm-seguin-ide-netbeans-RefactorDirAction.instance"/>
+               <folder name="Refactor">
+                  <folder name="Field refactorings">
+                      <file name="org-acm-seguin-ide-netbeans-RenameFieldAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-PushUpFieldAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-PushDownFieldAction.instance"/>
+                  </folder>
+                  <folder name="Method refactorings">
+                      <file name="org-acm-seguin-ide-netbeans-RenameMethodAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-PushUpMethodAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-PushUpAbstractMethodAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-PushDownMethodAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-MoveMethodAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-RenameParameterAction.instance"/>
+                  </folder>
+                  <folder name="Type refactorings">
+                      <file name="org-acm-seguin-ide-netbeans-RenameClassAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-MoveClassAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-AddParentClassAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-AddChildClassAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-RemoveClassAction.instance"/>
+                      <file name="org-acm-seguin-ide-netbeans-ExtractInterfaceAction.instance"/>
+                  </folder>
+                </folder>
+               <file name="org-acm-seguin-ide-netbeans-OptionsAction.instance"/>
+            </folder>
+        </folder>
+    </folder>
+-->
+    
+    <folder name="Editors">
+        <folder name="AnnotationTypes">
+            <file name="jrefactory-cs-annotation.xml" url="resources/annotation-cs.xml"/>
+            <file name="jrefactory-cpd-annotation.xml" url="resources/annotation-cpd.xml"/>
+        </folder>
+    </folder>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="org-acm-seguin-ide-netbeans-PrettyPrinterAction.instance"/>
+        </folder>
+    </folder>
+    <folder name="Shortcuts">
+        <file name="CS-X.instance">
+	    <attr name="instanceClass" stringvalue="org.acm.seguin.ide.netbeans.PrettyPrinterAction"/>
+	</file>
+    </folder>
+
+    <!--folder name="Looks">
+        <folder name="Composites">
+            <folder name="org-netbeans-modules-java-project">
+                <folder name="JavaSource">
+                    <file name="org-acm-seguin-ide-netbeans-JavaEditorPopupLook.instance">
+                        <attr name="instanceCreate" newvalue="org.acm.seguin.ide.netbeans.JavaEditorPopupLook"/>
+                        <attr name="instanceClass" stringvalue="org.acm.seguin.ide.netbeans.JavaEditorPopupLook"/>
+                        <attr name="instanceOf" stringvalue="org.netbeans.api.looks.Look"/>
+                    </file>
+                </folder>
+            </folder>
+        </folder>
+    </folder-->
+</filesystem>

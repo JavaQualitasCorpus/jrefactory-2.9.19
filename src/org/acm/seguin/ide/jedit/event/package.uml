@@ -1,0 +1,9 @@
+V[1.1:org.acm.seguin.ide.jedit.event]
+S[org.acm.seguin.ide.jedit.event:JRefactoryEvent,java.util:EventObject]{2:(475,211),(475,139)}
+S[org.acm.seguin.ide.jedit.event:JRefactoryAdapter,org.acm.seguin.ide.jedit.event:JRefactoryListener]{2:(153,358),(153,293)}
+S[org.acm.seguin.ide.jedit.event:JRefactoryListener,java.util:EventListener]{2:(151,163),(151,117)}
+P[org.acm.seguin.ide.jedit.event:JRefactoryAdapter]{36,358}
+P[org.acm.seguin.ide.jedit.event:JRefactoryEvent]{308,211}
+P[org.acm.seguin.ide.jedit.event:JRefactoryListener]{36,163}
+P[java.util:EventObject]{399,9}
+P[java.util:EventListener]{106,7}

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE DOCKABLES SYSTEM "dockables.dtd">
+<!-- Dockable component definition file for JavaStyle plugin -->
+<!-- $Id: dockables.xml,v 1.2 2003/10/23 14:36:15 mikeatkinson Exp $
+-->
+
+<!-- JavaStyle dockable windows -->
+
+<DOCKABLES>
+	<DOCKABLE NAME="javastyle">
+		new org.acm.seguin.ide.jedit.JRefactory(view);
+	</DOCKABLE>
+	<DOCKABLE NAME="navigator">
+		new org.acm.seguin.ide.jedit.Navigator(view);
+	</DOCKABLE>
+</DOCKABLES>

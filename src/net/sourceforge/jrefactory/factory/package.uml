@@ -1,0 +1,12 @@
+V[1.1:net.sourceforge.jrefactory.factory]
+S[net.sourceforge.jrefactory.factory:BufferParserFactory,net.sourceforge.jrefactory.factory:ParserFactory]{2:(647,366),(606,176)}
+S[net.sourceforge.jrefactory.factory:FileParserFactory,net.sourceforge.jrefactory.factory:ParserFactory]{2:(679,222),(645,176)}
+S[net.sourceforge.jrefactory.factory:InputStreamParserFactory,net.sourceforge.jrefactory.factory:ParserFactory]{2:(320,353),(509,176)}
+S[net.sourceforge.jrefactory.factory:StdInParserFactory,net.sourceforge.jrefactory.factory:ParserFactory]{2:(507,367),(566,176)}
+P[net.sourceforge.jrefactory.factory:BufferParserFactory]{567,366}
+P[net.sourceforge.jrefactory.factory:ExceptionPrinter]{69,37}
+P[net.sourceforge.jrefactory.factory:FileParserFactory]{647,222}
+P[net.sourceforge.jrefactory.factory:InputStreamParserFactory]{104,353}
+P[net.sourceforge.jrefactory.factory:NameFactory]{19,200}
+P[net.sourceforge.jrefactory.factory:ParserFactory]{381,26}
+P[net.sourceforge.jrefactory.factory:StdInParserFactory]{426,367}

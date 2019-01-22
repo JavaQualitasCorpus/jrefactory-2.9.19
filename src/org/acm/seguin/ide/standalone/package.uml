@@ -1,0 +1,6 @@
+V[1.1:org.acm.seguin.ide.standalone]
+S[org.acm.seguin.ide.standalone:JRefactory,javax.swing:JPanel]{2:(329,669),(472,771)}
+S[org.acm.seguin.ide.standalone:JRefactory,org.acm.seguin.ide.common:IDEInterface]{2:(329,489),(487,425)}
+P[org.acm.seguin.ide.standalone:JRefactory]{7,5}
+P[javax.swing:JPanel]{472,736}
+P[org.acm.seguin.ide.common:IDEInterface]{487,20}

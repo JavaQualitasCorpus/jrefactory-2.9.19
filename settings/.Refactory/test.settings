@@ -1,0 +1,7 @@
+unicode=Test\u0020Phrase
+octal=Test\040Phrase2
+newline=Test\nPhrase3
+backspace=Testx\bPhrase4
+tab=Test\t\tPhrase5
+ff=Test\fPhrase6
+slash=Test\\Phrase7

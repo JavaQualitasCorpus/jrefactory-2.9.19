@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!-- ===================================================================
+
+   Test the JavaStyle ant task
+
+
+Version:
+   $Id: ant-test.xml,v 1.1 2003/10/23 14:40:50 mikeatkinson Exp $
+
+==================================================================== -->
+
+<project default="test" name="Ant-Test" basedir=".">
+
+
+  <taskdef name="javastyle" classname="org.acm.seguin.ant.Pretty" classpath="../../../ant.build/lib/ant/JavaStyle.jar" />
+  <target name="test">
+     <copy file="../../clean/pretty/AddExtraSpaces.java" todir="."/>
+     <javastyle settingsdir="." >
+        <fileset dir=".">
+           <include name="*.java" />
+        </fileset>  
+     </javastyle>
+   </target>
+</project>

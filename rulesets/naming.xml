@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+
+<ruleset name="Naming Rules">
+  <description>
+The Naming Ruleset contains a collection of rules about names - too long, too short, and so forth.
+  </description>
+
+
+  <rule name="ShortVariable"
+        message="Avoid variables with short names like {0}"
+        class="net.sourceforge.pmd.rules.XPathRule">
+    <description>
+Detects when a field, local or parameter has a short name.
+    </description>
+      <properties>
+          <property name="xpath" pluginname="true">
+              <value>
+                  <![CDATA[
+    //VariableDeclaratorId[string-length(@Image) < 3]
+     [not(ancestor::ForInit)
+      and not(ancestor::ForStatement/LocalVariableDeclaration/VariableDeclarator)
+      and not (ancestor::BlockStatement/LocalVariableDeclaration/VariableDeclarator/VariableDeclaratorId)]
+     [not((ancestor::FormalParameter) and (ancestor::TryStatement))]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+      <priority>3</priority>
+    <example>
+<![CDATA[
+public class Something {
+   private int q = 15; // VIOLATION - Field
+
+   public static void main( String as[] ) {  // VIOLATION - Formal
+      for (int i = 0; i < 10; i++) { // Not a Violation (inside FOR)
+         r += q;
+      }
+   }
+}
+]]>
+    </example>
+  </rule>
+
+  <rule name="ShortVariable_m"
+        message="Avoid method local variables with short names like {0}"
+        class="net.sourceforge.pmd.rules.XPathRule">
+    <description>
+Detects when a field, local or parameter has a short name.
+    </description>
+      <properties>
+          <property name="xpath" pluginname="true">
+              <value>
+                  <![CDATA[
+    //VariableDeclaratorId[string-length(@Image) < 3]
+     [ (ancestor::BlockStatement/LocalVariableDeclaration/VariableDeclarator/VariableDeclaratorId)]
+     [not((ancestor::FormalParameter) and (ancestor::TryStatement))]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+      <priority>3</priority>
+    <example>
+<![CDATA[
+public class Something {
+   public static void main( String args[] ) {
+      int r = 20; // VIOLATION - Local
+   }
+}
+]]>
+    </example>
+  </rule>
+
+  <rule name="LongVariable"
+        message="Avoid excessively long variable names like {0}"
+        class="net.sourceforge.pmd.rules.XPathRule">
+    <description>
+Detects when a field, formal or local variable is declared with a long name.
+    </description>
+      <priority>3</priority>
+      <properties>
+          <property name="xpath" pluginname="true">
+              <value>
+                  <![CDATA[
+    //VariableDeclaratorId[string-length(@Image) > 16]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+    <example>
+<![CDATA[
+public class Something {
+   int reallyLongIntName = -3;  // VIOLATION - Field
+
+   public static void main( String argumentsList[] ) { // VIOLATION - Formal
+      int otherReallyLongName = -5; // VIOLATION - Local
+
+      for (int interestingIntIndex = 0;  // VIOLATION - For
+             interestingIntIndex < 10;
+             interestingIntIndex ++ ) {
+
+   }
+}
+]]>
+    </example>
+  </rule>
+
+  <rule name="ShortMethodNameRule"
+        message="Avoid using short method names"
+        class="net.sourceforge.pmd.rules.XPathRule">
+     <description>
+Detects when very short method names are used.
+     </description>
+      <priority>3</priority>
+      <properties>
+          <property name="xpath">
+              <value>
+                  <![CDATA[
+    //MethodDeclarator[string-length(@Image) < 3]
+                  ]]>
+              </value>
+          </property>
+      </properties>
+     <example>
+<![CDATA[
+public class ShortMethod {
+   public void a( int i ) { // Violation
+   }
+}
+]]>
+     </example>
+  </rule>
+
+
+    <rule name="VariableNamingConventionsRule"
+    message="{0} variable {1} should begin with {2}"
+    class="net.sourceforge.pmd.rules.VariableNamingConventionsRule">
+        <description>
+    A variable naming conventions rule - customize this to your liking
+    Final variables should be all caps
+    Non-final variables should not include underscores
+        </description>
+        <priority>1</priority>
+        <example>
+<![CDATA[
+public class Foo {
+   public static final int MY_NUM = 0;
+   public String myTest = "";
+   DataModule dmTest = new DataModule();
+}
+]]>
+        </example>
+    </rule>
+
+    <rule name="MethodNamingConventions"
+              message="Method name does not begin with a lower case character."
+              class="net.sourceforge.pmd.rules.MethodNamingConventionsRule">
+          <description>
+              Method names should always begin with a lower case character, and should not contain underscores.
+          </description>
+          <priority>1</priority>
+          <example>
+<![CDATA[
+public class Foo {
+   public void fooStuff() {
+   }
+}
+]]>
+          </example>
+        </rule>
+
+
+    <rule name="ClassNamingConventionsRule"
+          message="Class names should begin with an uppercase character and not include underscores"
+          class="net.sourceforge.pmd.rules.ClassNamingConventionsRule">
+      <description> Class names should always begin with an upper case character, and should not contain underscores.
+      </description>
+      <priority>1</priority>
+      <example>
+<![CDATA[
+public class Foo {}
+]]>
+      </example>
+    </rule>
+
+
+</ruleset>
+

@@ -1,0 +1,548 @@
+<?xml version="1.0"?>
+
+<!-- ===================================================================
+
+   Build file for jrefactory
+
+Notes:
+   This is a build file for use with the Jakarta Ant build tool.
+
+Prerequisites:
+
+   jakarta-ant from http://jakarta.apache.org
+
+Build Instructions:
+   To build, run
+
+     java org.apache.tools.ant.Main <target>
+
+   on the directory where this file is located with the target you want.
+
+Most useful targets:
+
+ - compile  -> compile classes package in "./${build.dir}/classes"
+ - jar      -> jar the classes to "${build.lib}/${name}.jar"
+ - javadocs -> creates the javadocs in "./${build.dir}/javadocs"
+ - dist     -> creates the complete binary distribution
+
+Authors:
+
+  Mike Atkinson <mailto:JRefactory@ladyshot.demon.co.uk>
+
+Version:
+   $Id: build_jedit.xml,v 1.8 2004/05/10 16:18:31 mikeatkinson Exp $
+
+==================================================================== -->
+
+<project default="jEdit.JavaStyle.jar" name="JRefactory 2.9.19 jEdit JavaStyle" basedir=".">
+
+  <!-- =================================================================== -->
+  <!-- Build properties                                                    -->
+  <!-- =================================================================== -->
+  <property name="name" value="jrefactory"/>
+  <property name="Name" value="JRefactory"/>
+  <property name="version" value="2.9.19"/>
+  <property name="year" value="2004"/>
+
+  <property name="debug" value="on"/>
+
+  <property name="src.dir" value="${basedir}/src"/>
+  <property name="docs.dir" value="${basedir}"/>
+  <property name="jars.dir" value="${basedir}/jar"/>
+  <property name="parent.dir" value="${basedir}/../"/>
+
+  <property name="test.dir" value="test"/>
+  <property name="test.src.dir" value="${test.dir}/src"/>
+  <property name="test.classes.dir" value="${test.dir}/classes"/>
+
+  <property name="packages" value="com.*,org.*"/>
+
+  <property name="build.file"           value="build.xml"/>
+  <property name="build.dir"            value="ant.build"/>
+  <property name="build.dest"           value="${build.dir}/classes"/>
+  <property name="build.lib"            value="${build.dir}/lib"/>
+  <property name="build.javadocs"       value="docs/api"/>
+  <property name="build.compiler.emacs" value="yes"/>
+
+  <property name="test.reports"        value="${build.dir}/reports"/>
+  
+  <property name="dist.dir" value="ant.build/dist"/>
+
+
+  <!-- =================================================================== -->
+  <!-- Build classpaths                                                    -->
+  <!-- =================================================================== -->
+
+
+  <path id="jEdit.build.classpath">
+     <!-- try and find in parent directory first. If installed in jEdit
+          then the parent should contain the latest version of these jar
+          files. If not fall back on those in the jars library. -->
+     <pathelement path="${parent.dir}/ant.jar"/>
+     <pathelement path="${parent.dir}/../jedit.jar"/>
+     <pathelement path="${parent.dir}/xmlParserAPIs-2.0.2.jar"/>  <!-- PMD -->
+     <pathelement path="${parent.dir}/saxpath-1.0-fcs.jar"/>      <!-- PMD -->
+     <pathelement path="${parent.dir}/xercesImpl-2.0.2.jar"/>     <!-- PMD -->
+     <pathelement path="${parent.dir}/jaxen-core-1.0-fcs.jar"/>   <!-- PMD -->
+     <pathelement path="${parent.dir}/ErrorList.jar"/>            <!-- jEdit plugin -->
+     <pathelement path="${parent.dir}/ProjectViewer.jar"/>        <!-- jEdit plugin -->
+     <pathelement path="${parent.dir}/findbugsGUI.jar"/>          <!-- FindBugs -->
+     <pathelement path="${parent.dir}/findbugs.jar"/>             <!-- FindBugs -->
+     <pathelement path="${parent.dir}/dom4j-full.jar"/>           <!-- FindBugs -->
+     <pathelement path="${jars.dir}/ant.jar"/>
+     <pathelement path="${jars.dir}/jedit.jar"/>
+     <pathelement path="${jars.dir}/xmlParserAPIs-2.0.2.jar"/>    <!-- PMD -->
+     <pathelement path="${jars.dir}/saxpath-1.0-fcs.jar"/>        <!-- PMD -->
+     <pathelement path="${jars.dir}/xercesImpl-2.0.2.jar"/>       <!-- PMD -->
+     <pathelement path="${jars.dir}/jaxen-core-1.0-fcs.jar"/>     <!-- PMD -->
+     <pathelement path="${jars.dir}/ErrorList.jar"/>              <!-- jEdit plugin -->
+     <pathelement path="${jars.dir}/ProjectViewer.jar"/>          <!-- jEdit plugin -->
+     <pathelement path="${jars.dir}/findbugsGUI.jar"/>            <!-- FindBugs -->
+     <pathelement path="${jars.dir}/findbugs.jar"/>               <!-- FindBugs -->
+     <pathelement path="${jars.dir}/dom4j-full.jar"/>             <!-- FindBugs -->
+     <pathelement path="${jars.dir}/jai_core.jar"/>               <!-- FindBugs -->
+     <pathelement path="${jars.dir}/jai_codec.jar"/>              <!-- FindBugs -->
+  </path>
+
+  <path id="test.build.classpath">
+     <pathelement path="${parent.dir}/ant.jar"/>
+     <pathelement path="${parent.dir}/xmlParserAPIs-2.0.2.jar"/>  <!-- PMD -->
+     <pathelement path="${parent.dir}/saxpath-1.0-fcs.jar"/>      <!-- PMD -->
+     <pathelement path="${parent.dir}/xercesImpl-2.0.2.jar"/>     <!-- PMD -->
+     <pathelement path="${parent.dir}/jaxen-core-1.0-fcs.jar"/>   <!-- PMD -->
+     <pathelement path="${parent.dir}/junit.jar"/>
+     <pathelement path="${build.dest}"/>
+     <pathelement path="${jars.dir}/ant.jar"/>
+     <pathelement path="${jars.dir}/xmlParserAPIs-2.0.2.jar"/>    <!-- PMD -->
+     <pathelement path="${jars.dir}/saxpath-1.0-fcs.jar"/>        <!-- PMD -->
+     <pathelement path="${jars.dir}/xercesImpl-2.0.2.jar"/>       <!-- PMD -->
+     <pathelement path="${jars.dir}/jaxen-core-1.0-fcs.jar"/>     <!-- PMD -->
+     <pathelement path="${jars.dir}/junit.jar"/>
+  </path>
+
+  <path id="javadoc.classpath">
+     <pathelement path="${jars.dir}/elixir.jar"/>
+     <pathelement path="${jars.dir}/junit.jar"/>
+     <pathelement path="${jars.dir}/jbuilderstub.jar"/>
+     <pathelement path="${jars.dir}/jdev.jar"/>
+  </path>
+
+
+  <!-- =================================================================== -->
+  <!-- Prepares the build directory                                        -->
+  <!-- =================================================================== -->
+  <target name="prepare">
+     <mkdir dir="${build.dir}"/>
+     <mkdir dir="${build.dir}/lib"/>
+     <mkdir dir="${build.dir}/jar"/>
+     <mkdir dir="${build.dir}/dist"/>
+     <mkdir dir="${test.classes.dir}"/>
+     <mkdir dir="${build.dest}"/>
+     <mkdir dir="${test.reports}"/>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Builds the version file                                             -->
+  <!-- =================================================================== -->
+  <target name="make.version" depends="prepare">
+     <javac srcdir="${src.dir}"
+            destdir="${build.dest}"
+            debug="${debug}"
+            classpathref="build.classpath"
+	  >
+        <include name="org/acm/seguin/tools/build/CreateVersion.java"/>
+     </javac>
+
+     <echo>${src.dir}</echo>
+     <java classname="org.acm.seguin.tools.build.CreateVersion">
+        <arg value="${version}"/>
+        <arg value="${src.dir}/org/acm/seguin/JRefactoryVersion.java"/>
+        <classpath>
+           <pathelement path="${build.dest}"/>
+        </classpath>
+     </java>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Compiles the source directory                                       -->
+  <!-- =================================================================== -->
+  <target name="jEdit.JavaStyle.compile" depends="prepare">
+     <javac srcdir="${src.dir}"
+            destdir="${build.dest}"
+            debug="${debug}"
+            classpathref="jEdit.build.classpath"
+	         >
+        <exclude name="org/acm/seguin/ide/cafe/**"/>
+        <exclude name="org/acm/seguin/ide/jbuilder/**"/>
+        <exclude name="org/acm/seguin/ide/elixir/**"/>
+        <exclude name="org/acm/seguin/ide/netbeans/**"/>
+        <exclude name="org/acm/seguin/ide/kawa/**"/>
+        <exclude name="org/acm/seguin/ide/jooda/**"/>
+        <exclude name="org/acm/seguin/ide/jdeveloper/**"/>
+        <exclude name="org/acm/seguin/ide/netbeans/**"/>
+     </javac>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Compiles the unit tests directory                                   -->
+  <!-- =================================================================== -->
+  <target name="test.compile" depends="prepare"> <!-- , compile"> -->
+     <mkdir dir="${build.dest}"/>
+     <javac srcdir="${test.src.dir}"
+            destdir="${test.classes.dir}"
+            debug="${debug}"
+            classpathref="test.build.classpath"
+	         >
+     </javac>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Jar the library                                                     -->
+  <!-- =================================================================== -->
+  <target name="jEdit.JavaStyle.jar" depends="jEdit.JavaStyle.compile">
+     <mkdir dir="${build.lib}/jedit" />
+     <copy todir="${build.dest}/org/acm/seguin/pmd/swingui/icons">
+        <fileset dir="${src.dir}/org/acm/seguin/pmd/swingui/icons">
+           <include name="*.gif"/>
+        </fileset>
+     </copy>
+     <copy todir="${build.dest}/org/acm/seguin/ide/common/icons">
+        <fileset dir="${src.dir}/org/acm/seguin/ide/common/icons">
+           <include name="*.gif"/>
+           <include name="*.png"/>
+        </fileset>
+     </copy>
+
+     <jar jarfile="${build.lib}/jedit/JavaStyle.jar"
+          basedir="${build.dest}"
+          manifest="${src.dir}/meta-inf/refactory.mf" 
+          >
+        <include name="**/*.class" />
+        <include name="**/*.jpg" />
+        <include name="**/*.gif" />
+        <include name="**/*.xml" />
+        <include name="**/*.properties" />
+        <exclude name="javastyle/**/*.class" />
+        <exclude name="*.class" />
+        <exclude name="**/ant/**" />
+        <exclude name="**/cafe/**" />
+        <exclude name="**/elixir/**" />
+        <exclude name="**/jooda/**" />
+        <exclude name="**/kawa/**" />
+        <exclude name="**/jbuilder/**" />
+        <exclude name="**/ide/ant/**" />
+        <exclude name="**/jbuilder/**" />
+        <exclude name="**/jdeveloper/**" />
+        <exclude name="**/netbeans/**" />
+        <exclude name="**/standalone/**" />
+        <exclude name="**/ide/common/action/**" />
+        <exclude name="**/seguin/uml/**" />
+        <exclude name="**/tools/build/*.class" />
+        <exclude name="**/tools/builder/*.class" />
+        <exclude name="**/tools/install/*.class" />
+        <fileset dir="${src.dir}/../">
+	        <include name="rulesets/*.properties" />
+	        <include name="rulesets/*.xml" />
+        </fileset>
+        <fileset dir="${src.dir}">
+	        <include name="**/RefactoryInstaller.class" />
+	        <include name="**/RefactoryStorage.class" />
+        </fileset>
+        <fileset dir="${src.dir}/../jEditFiles">
+           <include name="actions.xml"/>
+           <include name="dockables.xml"/>
+           <include name="JavaStyle.props"/>
+           <include name="*.html"/>
+           <include name="LICENSE.txt"/>
+           <include name="CHANGELOG.txt"/>
+           <include name="**/*.gif"/>
+        </fileset>
+        <fileset dir="${src.dir}">
+	        <include name="settings/.Refactory/pretty.settings" />
+	        <include name="ui/**" />
+        </fileset>
+     </jar>
+     <copy file="${build.lib}/jedit/JavaStyle.jar" todir="${parent.dir}"/>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Creates the API documentation                                       -->
+  <!-- =================================================================== -->
+  <target name="javadocs" depends="prepare">
+     <mkdir dir="${build.javadocs}"/>
+     <javadoc packagenames="${packages}"
+	           sourcepath="${src.dir}"
+              destdir="${build.javadocs}"
+              author="true"
+              version="true"
+              use="true"
+              windowtitle="${Name} API"
+              doctitle="${Name}"
+	           classpathref="javadoc.classpath"
+              />
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- Run the unit tests                                                  -->
+  <!-- =================================================================== -->
+  <target name="test.ui" depends="jEdit.JavaStyle.jar,test.compile">
+     <java classname="junit.swingui.TestRunner" fork="yes">
+        <arg value="org.TestPackage"/>
+        <jvmarg value="-Xms128m"/>
+        <jvmarg value="-Xmx128m"/>
+        <jvmarg value="-Djrefactory.home=.\settings"/>
+        <classpath>
+           <pathelement path="${test.classes.dir}"/>
+           <pathelement path="${build.dest}"/>
+           <pathelement path="${jars.dir}/junit.jar"/>
+           <pathelement path="${jars.dir}/junit.jar" />
+           <pathelement path="${jars.dir}/ant.jar" />
+           <pathelement path="${jars.dir}/ant-optional.jar" />
+        </classpath>
+     </java>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Run the unit tests                                                  -->
+  <!--                                                                     -->
+  <!-- These targets should all be one but I get an OutOfMemory error on   -->
+  <!-- my machine if they are combined.                                    -->
+  <!-- =================================================================== -->
+  <target name="test.pmd.1" depends="jEdit.JavaStyle.jar,test.compile">
+     <junit fork="no" printsummary="yes" haltonfailure="no">
+        <classpath>
+           <pathelement location="${build.dir}/classes" />
+           <path refid="build.classpath" />
+           <pathelement location="${basedir}" />
+           <pathelement location="${test.classes.dir}" />
+        </classpath>
+        <batchtest fork="no" todir="${test.reports}">
+           <fileset dir="${test.src.dir}">
+              <include name="test/**/rules/*Test.java" />
+           </fileset>
+        </batchtest>
+        <formatter type="plain" />
+     </junit>
+  </target>
+  <target name="test.pmd.2" depends="jEdit.JavaStyle.jar,test.compile">
+     <junit fork="yes" printsummary="yes" haltonfailure="no">
+        <classpath>
+           <pathelement location="${build.dir}/classes" />
+           <path refid="build.classpath" />
+           <pathelement location="${basedir}" />
+           <pathelement location="${test.classes.dir}" />
+        </classpath>
+        <batchtest fork="no" todir="${test.reports}">
+           <fileset dir="${test.src.dir}">
+              <include name="test/**/ant/*Test.java" />
+              <include name="test/**/ast/*Test.java" />
+              <include name="test/**/cpd/*Test.java" />
+              <include name="test/**/jaxen/*Test.java" />
+              <include name="test/**/renderers/*Test.java" />
+           </fileset>
+        </batchtest>
+        <formatter type="plain" />
+     </junit>
+  </target>
+  <target name="test.pmd.3" depends="jEdit.JavaStyle.jar,test.compile">
+     <junit fork="no" printsummary="yes" haltonfailure="no">
+        <classpath>
+           <pathelement location="${build.dir}/classes" />
+           <path refid="build.classpath" />
+           <pathelement location="${basedir}" />
+           <pathelement location="${test.classes.dir}" />
+        </classpath>
+        <batchtest fork="no" todir="${test.reports}">
+           <fileset dir="${test.src.dir}">
+              <include name="test/**/rules/design/*Test.java" />
+              <include name="test/**/rules/junit/*Test.java" />
+              <include name="test/**/rules/strictexception/*Test.java" />
+           </fileset>
+        </batchtest>
+        <formatter type="plain" />
+     </junit>
+  </target>
+  <target name="test.pmd.4" depends="jEdit.JavaStyle.jar,test.compile">
+     <junit fork="no" printsummary="yes" haltonfailure="no">
+        <classpath>
+           <pathelement location="${build.dir}/classes" />
+           <path refid="build.classpath" />
+           <pathelement location="${basedir}" />
+           <pathelement location="${test.classes.dir}" />
+        </classpath>
+        <batchtest fork="no" todir="${test.reports}">
+           <fileset dir="${test.src.dir}">
+              <include name="test/**/stat/*Test.java" />
+              <include name="test/**/symboltable/*Test.java" />
+              <include name="test/**/util/*Test.java" />
+              <include name="test/**/sourceforge/*Test.java" />
+           </fileset>
+        </batchtest>
+        <formatter type="plain" />
+     </junit>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Run the unit tests for the pretty printer only                      -->
+  <!-- =================================================================== -->
+  <target name="test.pretty.fast" depends="jEdit.JavaStyle.compile,test.compile">
+     <java classname="junit.swingui.TestRunner" fork="yes">
+        <arg value="org.acm.seguin.pretty.TestPrettyPrinter"/>
+        <jvmarg value="-Djrefactory.home=.\settings"/>
+        <classpath>
+           <pathelement path="${test.classes.dir}"/>
+           <pathelement path="${build.dest}"/>
+           <pathelement path="${jars.dir}/junit.jar"/>
+           <pathelement path="${jars.dir}/junit.jar" />
+           <pathelement path="${jars.dir}/ant.jar" />
+           <pathelement path="${jars.dir}/ant-optional.jar" />
+        </classpath>
+     </java>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Run the unit tests for the pretty printer JDK 1.5 enhancements only -->
+  <!-- =================================================================== -->
+  <target name="test.pretty.jdk1.5" depends="jEdit.JavaStyle.compile,test.compile">
+     <java classname="junit.swingui.TestRunner" fork="yes">
+        <arg value="org.acm.seguin.pretty.TestPrettyPrinterJDK1_5"/>
+        <jvmarg value="-Djrefactory.home=.\settings"/>
+        <classpath>
+           <pathelement path="${test.classes.dir}"/>
+           <pathelement path="${build.dest}"/>
+           <pathelement path="${jars.dir}/junit.jar"/>
+           <pathelement path="${jars.dir}/junit.jar" />
+           <pathelement path="${jars.dir}/ant.jar" />
+           <pathelement path="${jars.dir}/ant-optional.jar" />
+        </classpath>
+     </java>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Run the unit tests                                                  -->
+  <!-- =================================================================== -->
+  <target name="test.pretty" depends="jEdit.JavaStyle.compile,test.compile">
+     <java classname="junit.swingui.TestRunner" fork="yes">
+        <arg value="org.acm.seguin.pretty.TestPackage"/>
+        <jvmarg value="-Djrefactory.home=.\settings"/>
+        <classpath>
+           <pathelement path="${test.classes.dir}"/>
+           <pathelement path="${build.dest}"/>
+           <pathelement path="${jars.dir}/junit.jar"/>
+           <pathelement path="${jars.dir}/junit.jar" />
+           <pathelement path="${jars.dir}/ant.jar" />
+           <pathelement path="${jars.dir}/ant-optional.jar" />
+        </classpath>
+     </java>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Run the unit tests                                                  -->
+  <!-- =================================================================== -->
+  <target name="test.repackage" depends="test.compile,jEdit.JavaStyle.compile">
+     <java classname="junit.swingui.TestRunner" fork="yes">
+        <arg value="org.acm.seguin.refactor.type.TestPackage"/>
+        <jvmarg value="-Djrefactory.home=.\settings"/>
+        <classpath>
+           <pathelement path="${test.classes.dir}"/>
+           <pathelement path="${build.dest}"/>
+           <pathelement path="${jars.dir}/junit.jar"/>
+           <pathelement path="${jars.dir}/junit.jar" />
+           <pathelement path="${jars.dir}/ant.jar" />
+           <pathelement path="${jars.dir}/ant-optional.jar" />
+        </classpath>
+     </java>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Run all the unit tests, using the new GJC runtime                   -->
+  <!-- =================================================================== -->
+  <target name="test.all" depends="test.compile,jEdit.JavaStyle.compile">
+     <junit fork="yes" dir="${basedir}">
+        <jvmarg value="-Xbootclasspath/p:${jars.dir}\gjc-rt.jar"/>
+        <jvmarg value="-Djrefactory.home=.\settings"/>
+        <test name="org.TestPackage"
+              haltonfailure="yes"
+              haltonerror="yes"
+              />
+        <classpath>
+           <pathelement path="${test.classes.dir}"/>
+           <pathelement path="${build.dest}"/>
+           <pathelement path="${java.class.path}" />
+           <pathelement path="${jars.dir}/junit.jar" />
+           <pathelement path="${jars.dir}/ant.jar" />
+           <pathelement path="${jars.dir}/ant-optional.jar" />
+        </classpath>
+     </junit>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Create the JRefactory Documentation.                                -->
+  <!-- =================================================================== -->
+  <target name="docs" depends="jEdit.JavaStyle.compile">
+    <java classname="org.acm.seguin.tools.build.JavadocBuilder">
+       <arg value="${basedir}\package.lst"/>
+       <arg value="${src.dir}"/>
+       <classpath>
+          <pathelement path="${build.dest}"/>
+       </classpath>
+     </java>
+     <javadoc author="true" version="true" destdir="${build.dir}/docs" packageList="${basedir}\package.lst" sourcepath="${src.dir}"/>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Create the JavaStyle jEdit plugin Source distribution               -->
+  <!-- =================================================================== -->
+  <target name="jEdit.JavaStyle.dist" depends="jEdit.JavaStyle.jar">
+     <mkdir dir="${dist.dir}"/>
+     <zip zipfile="${dist.dir}/javastyle-jedit-${version}.zip" >
+         <fileset dir="..">
+             <include name="coreplugin.jar"/>
+             <include name="dom4j-full.jar"/>
+             <include name="findbugs.jar"/>
+             <include name="findbugsGUI.jar"/>
+         </fileset>
+         <fileset dir="${build.lib}/jedit">
+             <include name="JavaStyle.jar"/>
+        </fileset>
+     </zip>
+     <copy file="${src.dir}/../jEditFiles/README.txt" todir="${src.dir}/.."/>
+     <zip zipfile="${dist.dir}/javastyle-jedit-${version}-source.zip" >
+         <fileset dir="${src.dir}/../..">
+            <include name="JavaStyle/**" />
+            <exclude name="JavaStyle/ant.build/**" />
+            <exclude name="JavaStyle/**/*.class" />
+            <exclude name="JavaStyle/**/*.zip" />
+            <exclude name="JavaStyle/**/*.jar" />
+        </fileset>
+     </zip>
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- Cleans everything                                                   -->
+  <!-- =================================================================== -->
+  <target name="clean">
+     <delete dir="${build.dir}"/>
+     <delete dir="${dist.dir}"/>
+     <delete dir="${test.classes.dir}"/>
+     <delete dir="${test.dir}/root"/>
+     <delete dir="${test.dir}/temp"/>
+     <delete dir="${build.javadocs}"/>
+  </target>
+
+
+</project>

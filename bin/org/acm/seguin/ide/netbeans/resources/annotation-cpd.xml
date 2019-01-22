@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE type PUBLIC 
+    '-//NetBeans//DTD annotation type 1.0//EN' 
+    'http://www.netbeans.org/dtds/annotation-type-1_0.dtd'>
+<type name="jrefactory-cpd-annotation" 
+    localizing_bundle="org.acm.seguin.ide.netbeans.Bundle" 
+    description_key="LBL_jrefactory_cpd_annotation" 
+    visible="true" 
+    type="linepart" 
+    glyph="nbresloc:/org/acm/seguin/ide/netbeans/resources/JRefactoryIcon.gif" 
+    waveunderline="0xD0FFD0"
+/>
+

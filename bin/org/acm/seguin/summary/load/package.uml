@@ -1,0 +1,14 @@
+V[1.1:org.acm.seguin.summary.load]
+S[org.acm.seguin.summary.load:FlashLoader,org.acm.seguin.summary:FrameworkLoader]{2:(100,519),(106,456)}
+S[org.acm.seguin.summary.load:SwingLoadStatus,javax.swing:JDialog]{2:(482,467),(530,452)}
+S[org.acm.seguin.summary.load:SilentLoadStatus,org.acm.seguin.summary.load:LoadStatus]{2:(133,239),(168,110)}
+S[org.acm.seguin.summary.load:SwingLoadStatus,org.acm.seguin.summary.load:LoadStatus]{2:(287,337),(203,110)}
+S[org.acm.seguin.summary.load:TextLoadStatus,org.acm.seguin.summary.load:LoadStatus]{2:(313,154),(254,110)}
+P[org.acm.seguin.summary.load:FlashLoader]{49,519,true,true}
+P[org.acm.seguin.summary.load:LoadStatus]{70,4,true,true}
+P[org.acm.seguin.summary.load:RapidLoader]{360,25,true,true}
+P[org.acm.seguin.summary.load:SilentLoadStatus]{8,239,true,true}
+P[org.acm.seguin.summary.load:SwingLoadStatus]{222,337,true,true}
+P[org.acm.seguin.summary.load:TextLoadStatus]{284,154,true,true}
+P[org.acm.seguin.summary:FrameworkLoader]{6,384,true,true}
+P[javax.swing:JDialog]{530,4,true,true}

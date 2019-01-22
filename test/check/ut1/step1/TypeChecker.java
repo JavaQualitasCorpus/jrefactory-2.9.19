@@ -1,0 +1,31 @@
+package imp;
+import abstracter.*;
+import test.TestClass;
+
+/**
+ *  Description of the Class
+ *
+ *@author    Chris Seguin
+ */
+public class TypeChecker {
+
+	/**
+	 *  Gets the New attribute of the TypeChecker object
+	 *
+	 *@return    The New value
+	 */
+	public NormalClass getNew() {
+		return new NormalClass();
+	}
+
+
+	/**
+	 *  Description of the Method
+	 *
+	 *@param  data  Description of Parameter
+	 *@return       Description of the Returned Value
+	 */
+	public boolean check(Object data) {
+		return data instanceof TestClass;
+	}
+}

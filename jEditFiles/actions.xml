@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE ACTIONS SYSTEM "actions.dtd">
+
+<ACTIONS>
+	<ACTION NAME="javastyle-reformat">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.beautify(view, buffer, false);
+		</CODE>
+	</ACTION>
+
+	<ACTION NAME="javastyle-options">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.optionDialog(view);
+		</CODE>
+	</ACTION>
+    <ACTION NAME="javastyle-check-current-buffer">
+        <CODE>
+            org.acm.seguin.ide.jedit.JavaStyleActions.check(view, buffer);
+        </CODE>
+    </ACTION>
+    <ACTION NAME="javastyle-check-all-open-buffers">
+        <CODE>
+            org.acm.seguin.ide.jedit.JavaStyleActions.checkAllOpenBuffers(view);
+        </CODE>
+    </ACTION>
+    <ACTION NAME="javastyle-check-current-directory">
+        <CODE>
+            org.acm.seguin.ide.jedit.JavaStyleActions.checkDirectory(view);
+        </CODE>
+    </ACTION>
+  <ACTION NAME="javastyle-check-current-directory-recursively">
+    <CODE>
+      org.acm.seguin.ide.jedit.JavaStyleActions.checkDirectoryRecursively(view);
+    </CODE>
+  </ACTION>
+    <ACTION NAME="javastyle-clear-errorlist">
+      <CODE>
+        org.acm.seguin.ide.jedit.JavaStyleActions.clearErrorList(view);
+      </CODE>
+    </ACTION>
+  <ACTION NAME="javastyle-cpd-currentfile">
+    <CODE>
+      org.acm.seguin.ide.jedit.JavaStylePlugin.cpdCurrentFile(view);
+    </CODE>
+  </ACTION>
+    <ACTION NAME="javastyle-cpd-dir">
+    <CODE>
+      org.acm.seguin.ide.jedit.JavaStylePlugin.cpdDir(view,false);
+    </CODE>
+  </ACTION>
+  <ACTION NAME="javastyle-cpd-dir-recursively">
+    <CODE>
+      org.acm.seguin.ide.jedit.JavaStylePlugin.cpdDir(view,true);
+    </CODE>
+  </ACTION>
+  <ACTION NAME="javastyle-check-file">
+    <CODE>
+      org.acm.seguin.ide.jedit.JavaStylePlugin.checkFile(view,browser);
+    </CODE>
+  </ACTION>
+  
+          
+   <!-- load the java source under the dir parameter (a File) into the JRefactory package browser.
+        If dir is null then open a JFileChooser. -->
+	<ACTION NAME="javastyle_load_uml">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.loadUML(view, null);
+		</CODE>
+	</ACTION>
+	
+   <!-- open the UML class diagram(s) associated with the file parameter 
+        If the file is null then open the diagram associated with the currently
+        selected buffer (assuming it is a Java source file).
+   -->
+	<ACTION NAME="javastyle_open_uml">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.openUML(view, null);
+		</CODE>
+	</ACTION>
+	
+        <!-- parse the Java files associated with the current project and add to
+             the UML class diagrams. -->
+	<ACTION NAME="javastyle_open_all_files">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.openAllProjectFiles(view);
+		</CODE>
+	</ACTION>
+	
+        <!-- remove all the Java files associated with the current project from
+             the UML class diagrams. -->
+	<ACTION NAME="javastyle_remove_all_files">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.removeAllProjectFiles(view);
+		</CODE>
+	</ACTION>
+	
+        <!-- ??? -->
+	<ACTION NAME="javastyle-selectedfiles-viewer-menu-item">
+    	<CODE>
+			pv = view.getDockableWindowManager().getDockable("jrefactory");
+			if (pv == null) {
+				JOptionPane.showMessageDialog(view, "cannot get JRefactory");
+			} else {
+				// JOptionPane.showMessageDialog(view, "Got JRefactory");
+				String s = "";
+				List list = pv.getSelectedFilePaths();
+				if (list !=null) {
+					ListIterator iter = list.listIterator();
+					while ( iter.hasNext() ) {
+						s += iter.next() + "\n";
+					}
+					textArea.setSelectedText(s);
+				}
+			}
+		</CODE>
+	</ACTION>
+
+        <!-- rename the class which contains the focus. -->
+	<ACTION NAME="javastyle-rename-class">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.renameClass(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- move the class which contains the focus to another location/name. -->
+	<ACTION NAME="javastyle-move-class-to">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.moveClassTo(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- add an abstract parent class to the class which contains the focus. -->
+	<ACTION NAME="javastyle-add-abstract-parent">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.addAbstractParentClass(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- add a child class to the class which contains the focus. -->
+	<ACTION NAME="javastyle-add-child-class">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.addChildClass(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- remove the class which contains the focus. -->
+	<ACTION NAME="javastyle-remove-class">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.removeClass(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- extract an interface for the class which contains the focus. -->
+	<ACTION NAME="javastyle-extract-interface">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.extractInterface(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- rename variables (fields) in the class which contains the focus using Hungarian notation. -->
+	<ACTION NAME="javastyle-rename-variables">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.renameVariablesUsingHungarian(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- rename the method which contains the focus. -->
+	<ACTION NAME="javastyle-rename-method">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.renameMethod(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- push up the method which contains the focus into the superclass. -->
+	<ACTION NAME="javastyle-push-up-method">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.pushUpMethod(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- push up the method which contains the focus into the superclass as an abstract method. -->
+	<ACTION NAME="javastyle-push-up-abstract">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.pushUpAbstractMethod(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- push down the method which contains the focus into a subclass. -->
+	<ACTION NAME="javastyle-push-down-method">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.pushDownMethod(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- move the method which contains the focus to another class. -->
+	<ACTION NAME="javastyle-move-method">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.moveMethod(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- rename parameters the method which contains the focus. -->
+	<ACTION NAME="javastyle-rename-parameters">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.renameMethodParameters(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- rename the field which contains the focus. -->
+	<ACTION NAME="javastyle-rename-field">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.renameField(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- push up the field which contains the focus into the superclass. -->
+	<ACTION NAME="javastyle-push-up-field">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.pushUpField(view, buffer);
+		</CODE>
+	</ACTION>
+	
+        <!-- push down the field which contains the focus into a subclass. -->
+	<ACTION NAME="javastyle-push-down-field">
+		<CODE>
+			org.acm.seguin.ide.jedit.JavaStyleActions.pushDownField(view, buffer);
+		</CODE>
+	</ACTION>
+	
+	
+</ACTIONS>
+

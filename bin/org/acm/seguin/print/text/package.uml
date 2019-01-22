@@ -1,0 +1,13 @@
+V[1.1:org.acm.seguin.print.text]
+S[org.acm.seguin.print.text:NumberedLinePrinter,org.acm.seguin.print.text:LinePrinter]{2:(619,305),(724,169)}
+S[org.acm.seguin.print.text:PrintingThread,java.lang:Thread]{2:(466,701),(383,627)}
+S[org.acm.seguin.print.text:PropertyLinePrinter,org.acm.seguin.print.text:LinePrinter]{2:(882,197),(855,169)}
+S[org.acm.seguin.print.text:TextPagePrinter,org.acm.seguin.print:PagePrinter]{2:(937,754),(938,717)}
+P[org.acm.seguin.print.text:LinePrinter]{608,18}
+P[org.acm.seguin.print.text:LineSet]{414,16}
+P[org.acm.seguin.print.text:NumberedLinePrinter]{416,304}
+P[org.acm.seguin.print.text:PrintingThread]{403,701}
+P[org.acm.seguin.print.text:PropertyLinePrinter]{802,197}
+P[org.acm.seguin.print.text:TextPagePrinter]{766,754}
+P[java.lang:Thread]{9,7}
+P[org.acm.seguin.print:PagePrinter]{742,397}

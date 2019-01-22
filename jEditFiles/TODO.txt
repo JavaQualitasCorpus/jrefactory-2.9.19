@@ -1,0 +1,60 @@
+TODO for JavaStyle
+------------------
+
+* screen is not updated during reformat (busy cursor is not shown)
+* reformat a set of files
+* reformat current selection only
+
+
+The following PrettyPrinter settings currently do not have a gui option
+=======================================================================
+
+* sort.#=Final(bottom|top)
+
+  Sort the fields with initializers to the top
+     * top - the final methods and fields should be sorted to the top
+     * bottom - the final methods and fields should be sorted to the bottom
+  Note: as of JRefactory version 2.6.25, this option is unusuable.
+
+* sort.#=Alphabetical()
+
+  Sort the fields, methods, and classes in alphabetical order
+  Note: as of JRefactory version 2.6.25, this option is unusuable.
+
+* javadoc.star=2
+
+  Star count for the start of a javadoc comment, e.g. if javadoc.star=4
+  we get:
+  /****
+   * blah
+   */
+
+* cast.force.nospace=true|false
+
+  Do we force a space after a cast? I don't know how this differs from the
+  option cast.space
+
+* maintain.newlines.around.imports=true|false
+
+  Keep all the newlines around imports. The default (true) is good enough.
+
+* header.*, footer.*
+
+* exception.tag.name=@exception | @throws
+
+* char.stream.type=1
+
+  This feature describes what type of characters are used for the java files.
+  1 - ASCII (1 byte characters)
+  2 - Unicode (2 byte characters - far east)
+  3 - ASCII full (2 byte characters - far east)
+
+* import.sort.neighbourhood=0
+
+  If you want classes that are written by you to move to the end of the list of
+  imports change this value.
+  0 - Keep all the imports in alphabetical order
+  1 - If the package and the import start with the same value - com or org - put them at the end
+  2 - When package and import share 2 directory levels, the imports are listed last
+  3 - When package and import share 3 directory levels, the imports are listed last
+

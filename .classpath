@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test/src"/>
+	<classpathentry kind="lib" path="lib/sun-jai_core.jar"/>
+	<classpathentry kind="lib" path="lib/com.springsource.org.apache.tools.ant-1.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/jedit.jar"/>
+	<classpathentry kind="lib" path="lib/openide-util.jar"/>
+	<classpathentry kind="lib" path="lib/org-netbeans-modules-java.jar"/>
+	<classpathentry kind="lib" path="lib/org-openide-filesystems.jar"/>
+	<classpathentry kind="lib" path="lib/org-openide-io.jar"/>
+	<classpathentry kind="lib" path="lib/org-openide-loaders.jar"/>
+	<classpathentry kind="lib" path="lib/org-openide-nodes.jar"/>
+	<classpathentry kind="lib" path="lib/org-openide-text.jar"/>
+	<classpathentry kind="lib" path="lib/org-openide-windows.jar"/>
+	<classpathentry kind="lib" path="lib/netbeans.jar"/>
+	<classpathentry kind="lib" path="lib/jrefactory-2.9.19_allstub.jar"/>
+	<classpathentry kind="lib" path="lib/JRefactoryModule.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

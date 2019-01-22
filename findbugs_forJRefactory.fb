@@ -1,0 +1,12 @@
+[Jar files]
+C:\Program Files\jEdit 4.2pre6\jars\JRefactory\ant.build\lib\jrefactory.jar
+[Source dirs]
+C:\Program Files\jEdit 4.2pre6\jars\JRefactory\src
+[Aux classpath entries]
+C:\Program Files\jEdit 4.2pre5\jars\dom4j-full.jar
+C:\Program Files\jEdit 4.2pre5\jars\ErrorList.jar
+C:\Program Files\jEdit 4.2pre5\jars\findbugs.jar
+C:\Program Files\jEdit 4.2pre5\jars\findbugsGUI.jar
+C:\Program Files\jEdit 4.2pre5\jars\jaxen-core-1.0-fcs.jar
+C:\Program Files\jEdit 4.2pre5\jars\ProjectViewer.jar
+C:\Program Files\jEdit 4.2pre5\jars\saxpath-1.0-fcs.jar

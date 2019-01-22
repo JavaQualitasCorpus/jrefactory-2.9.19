@@ -1,0 +1,15 @@
+V[1.1:org.acm.seguin.io]
+S[org.acm.seguin.io:AllFileFilter,javax.swing.filechooser:FileFilter]{2:(405,191),(448,100)}
+S[org.acm.seguin.io:ExtensionFileFilter,javax.swing.filechooser:FileFilter]{2:(529,196),(489,100)}
+S[org.acm.seguin.io:InplaceOutputStream,java.io:OutputStream]{2:(163,654),(153,591)}
+S[org.acm.seguin.io:DirectoryTreeTraversal,java.lang:Runnable]{2:(168,231),(192,137)}
+S[org.acm.seguin.io:FileCopy,java.lang:Runnable]{2:(508,425),(246,137)}
+P[org.acm.seguin.io:AllFileFilter]{300,191}
+P[org.acm.seguin.io:DirectoryTreeTraversal]{6,231}
+P[org.acm.seguin.io:ExtensionFileFilter]{448,196}
+P[org.acm.seguin.io:FileCopy]{450,425}
+P[org.acm.seguin.io:InplaceOutputStream]{28,654}
+P[org.acm.seguin.io:Saveable]{262,20}
+P[javax.swing.filechooser:FileFilter]{370,10}
+P[java.io:OutputStream]{21,450}
+P[java.lang:Runnable]{146,46}

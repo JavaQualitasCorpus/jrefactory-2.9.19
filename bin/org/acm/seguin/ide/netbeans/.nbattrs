@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="AddChildClassAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="AddChildClassAction"/>
+    </fileobject>
+    <fileobject name="AddParentClassAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="AddParentClassAction"/>
+    </fileobject>
+    <fileobject name="CPDAnnotation.java">
+        <attr name="class_dependency_java.beans.PropertyChangeListener" stringvalue="CPDAnnotation"/>
+        <attr name="class_dependency_org.openide.text.Annotation" stringvalue="CPDAnnotation"/>
+    </fileobject>
+    <fileobject name="CPDCheckAllBuffersAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CallableSystemAction" stringvalue="CPDCheckAllBuffersAction"/>
+    </fileobject>
+    <fileobject name="CPDCheckBufferAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CPDCheckBufferAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="CPDCheckBufferAction"/>
+    </fileobject>
+    <fileobject name="CPDCheckBufferAction_1.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CPDCheckBufferAction_1"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="CPDCheckBufferAction_1"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="CPDCheckBufferAction_1"/>
+    </fileobject>
+    <fileobject name="CPDCheckDirAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CPDCheckDirAction"/>
+    </fileobject>
+    <fileobject name="CPDCheckDirRecursiveAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CPDCheckDirRecursiveAction"/>
+    </fileobject>
+    <fileobject name="CPDDirAction.java">
+        <attr name="class_dependency_javax.swing.JMenu" stringvalue="CPDDirAction.LazyMenu"/>
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CPDDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="CPDDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Toolbar" stringvalue="CPDDirAction"/>
+    </fileobject>
+    <fileobject name="CSCheckAllBuffersAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CSCheckAllBuffersAction"/>
+    </fileobject>
+    <fileobject name="CSCheckBufferAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CSCheckBufferAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="CSCheckBufferAction"/>
+    </fileobject>
+    <fileobject name="CSCheckBufferAction_1.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CSCheckBufferAction_1"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="CSCheckBufferAction_1"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="CSCheckBufferAction_1"/>
+    </fileobject>
+    <fileobject name="CSCheckDirAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CallableSystemAction" stringvalue="CSCheckDirAction"/>
+    </fileobject>
+    <fileobject name="CSCheckDirRecursiveAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CallableSystemAction" stringvalue="CSCheckDirRecursiveAction"/>
+    </fileobject>
+    <fileobject name="CSDirAction.java">
+        <attr name="class_dependency_javax.swing.JMenu" stringvalue="CSDirAction.LazyMenu"/>
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="CSDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="CSDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Toolbar" stringvalue="CSDirAction"/>
+    </fileobject>
+    <fileobject name="ExtractInterfaceAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="ExtractInterfaceAction"/>
+    </fileobject>
+    <fileobject name="ExtractMethodAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="ExtractMethodAction"/>
+    </fileobject>
+    <fileobject name="JRefactory.java">
+        <attr name="class_dependency_java.io.Serializable" stringvalue="JRefactory.MySerObject"/>
+        <attr name="class_dependency_javax.swing.JPanel" stringvalue="JRefactory.ReloadChooserPanel"/>
+        <attr name="class_dependency_org.acm.seguin.ide.common.IDEInterface" stringvalue="JRefactory"/>
+        <attr name="class_dependency_org.openide.windows.TopComponent" stringvalue="JRefactory"/>
+    </fileobject>
+    <fileobject name="JRefactoryAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CallableSystemAction" stringvalue="JRefactoryAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="JRefactoryAction"/>
+    </fileobject>
+    <fileobject name="MoveClassAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="MoveClassAction"/>
+    </fileobject>
+    <fileobject name="MoveMethodAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="MoveMethodAction"/>
+    </fileobject>
+    <fileobject name="NetBeansPrettyPrinter.java">
+        <attr name="class_dependency_org.acm.seguin.pretty.PrettyPrintFromIDE" stringvalue="NetBeansPrettyPrinter"/>
+    </fileobject>
+    <fileobject name="NetbeansCurrentSummary.java">
+        <attr name="class_dependency_net.sourceforge.jrefactory.action.CurrentSummary" stringvalue="NetbeansCurrentSummary"/>
+    </fileobject>
+    <fileobject name="OptionsAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CallableSystemAction" stringvalue="OptionsAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="OptionsAction"/>
+    </fileobject>
+    <fileobject name="PrettyPrinterAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="PrettyPrinterAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="PrettyPrinterAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="PrettyPrinterAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Toolbar" stringvalue="PrettyPrinterAction"/>
+    </fileobject>
+    <fileobject name="PushDownFieldAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="PushDownFieldAction"/>
+    </fileobject>
+    <fileobject name="PushDownMethodAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="PushDownMethodAction"/>
+    </fileobject>
+    <fileobject name="PushUpAbstractMethodAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="PushUpAbstractMethodAction"/>
+    </fileobject>
+    <fileobject name="PushUpFieldAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="PushUpFieldAction"/>
+    </fileobject>
+    <fileobject name="PushUpMethodAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="PushUpMethodAction"/>
+    </fileobject>
+    <fileobject name="RefactorDirAction.java">
+        <attr name="class_dependency_javax.swing.JMenu" stringvalue="RefactorDirAction.LazyMenu"/>
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RefactorDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="RefactorDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="RefactorDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Toolbar" stringvalue="RefactorDirAction"/>
+    </fileobject>
+    <fileobject name="RefactorFieldDirAction.java">
+        <attr name="class_dependency_javax.swing.JMenu" stringvalue="RefactorFieldDirAction.LazyMenu"/>
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RefactorFieldDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="RefactorFieldDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="RefactorFieldDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Toolbar" stringvalue="RefactorFieldDirAction"/>
+    </fileobject>
+    <fileobject name="RefactorMethodDirAction.java">
+        <attr name="class_dependency_javax.swing.JMenu" stringvalue="RefactorMethodDirAction.LazyMenu"/>
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RefactorMethodDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="RefactorMethodDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="RefactorMethodDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Toolbar" stringvalue="RefactorMethodDirAction"/>
+    </fileobject>
+    <fileobject name="RefactorTypeDirAction.java">
+        <attr name="class_dependency_javax.swing.JMenu" stringvalue="RefactorTypeDirAction.LazyMenu"/>
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RefactorTypeDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Menu" stringvalue="RefactorTypeDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Popup" stringvalue="RefactorTypeDirAction"/>
+        <attr name="class_dependency_org.openide.util.actions.Presenter.Toolbar" stringvalue="RefactorTypeDirAction"/>
+    </fileobject>
+    <fileobject name="RemoveClassAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RemoveClassAction"/>
+    </fileobject>
+    <fileobject name="RenameClassAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RenameClassAction"/>
+    </fileobject>
+    <fileobject name="RenameFieldAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RenameFieldAction"/>
+    </fileobject>
+    <fileobject name="RenameMethodAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RenameMethodAction"/>
+    </fileobject>
+    <fileobject name="RenameParameterAction.java">
+        <attr name="class_dependency_org.openide.util.actions.CookieAction" stringvalue="RenameParameterAction"/>
+    </fileobject>
+</attributes>

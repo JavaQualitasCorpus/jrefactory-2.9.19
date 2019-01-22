@@ -1,0 +1,9 @@
+V[1.1:net.sourceforge.jrefactory.query]
+S[net.sourceforge.jrefactory.query:EqualTree,net.sourceforge.jrefactory.query:CompareParseTreeVisitor]{2:(928,1352),(872,1284)}
+S[net.sourceforge.jrefactory.query:CompareParseTreeVisitor,net.sourceforge.jrefactory.parser:JavaParserVisitor]{2:(494,1058),(400,1058)}
+P[net.sourceforge.jrefactory.query:CompareParseTreeVisitor]{494,18}
+P[net.sourceforge.jrefactory.query:EqualTree]{928,1044}
+P[net.sourceforge.jrefactory.query:Found]{1014,86}
+P[net.sourceforge.jrefactory.query:PackageNameGetter]{972,498}
+P[net.sourceforge.jrefactory.query:Search]{946,290}
+P[net.sourceforge.jrefactory.parser:JavaParserVisitor]{22,8}

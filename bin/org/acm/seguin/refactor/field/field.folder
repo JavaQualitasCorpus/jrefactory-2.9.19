@@ -1,0 +1,15 @@
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\AddFieldTransform.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\AddFieldVisitor.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\FieldRefactoring.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\FieldRefactoringFactory.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\PushDownFieldRefactoring.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\PushUpFieldRefactoring.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\RemoveFieldFromSubclassVisitor.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\RemoveFieldTransform.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\RemoveFieldVisitor.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\RenameFieldData.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\RenameFieldRefactoring.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\RenameFieldTransform.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\RenameFieldVisitor.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\RenameSystemTraversal.java
+C:\SWEditors\Projects\JRefactory\src\org\acm\seguin\refactor\field\package.html

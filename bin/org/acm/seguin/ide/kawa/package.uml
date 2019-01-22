@@ -1,0 +1,6 @@
+V[1.1:org.acm.seguin.ide.kawa]
+S[org.acm.seguin.ide.kawa:KawaPrettyPrint,org.acm.seguin.pretty:PrettyPrintFromIDE]{2:(192,260),(168,216)}
+S[org.acm.seguin.ide.kawa:KawaPrettyPrint,<unknown>:KawaEventListener]{2:(273,260),(284,213)}
+P[org.acm.seguin.ide.kawa:KawaPrettyPrint]{156,260}
+P[org.acm.seguin.pretty:PrettyPrintFromIDE]{19,10}
+P[<unknown>:KawaEventListener]{232,121}

@@ -1,0 +1,10 @@
+V[1.1:org.acm.seguin.pmd.jaxen]
+S[org.acm.seguin.pmd.jaxen:DocumentNavigator,<unknown>:org.jaxen]{2:(188,168),(177,64)}
+S[org.acm.seguin.pmd.jaxen:AttributeAxisIterator,java.util:Iterator]{2:(1115,458),(949,242)}
+S[org.acm.seguin.pmd.jaxen:NodeIterator,java.util:Iterator]{2:(783,386),(894,242)}
+P[org.acm.seguin.pmd.jaxen:Attribute]{469,10,true,true}
+P[org.acm.seguin.pmd.jaxen:AttributeAxisIterator]{1059,458,true,true}
+P[org.acm.seguin.pmd.jaxen:DocumentNavigator]{37,168,true,true}
+P[org.acm.seguin.pmd.jaxen:NodeIterator]{550,386,true,true}
+P[<unknown>:org.jaxen]{112,9,true,true}
+P[java.util:Iterator]{870,170,true,true}

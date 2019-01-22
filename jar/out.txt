@@ -1,0 +1,157 @@
+-- listing properties --
+java.runtime.name=Java(TM) 2 Runtime Environment, Stand...
+sun.boot.library.path=C:\Program Files\Java\j2re1.4.2_01\bin
+java.vm.version=1.4.2_01-b06
+java.vm.vendor=Sun Microsystems Inc.
+java.vendor.url=http://java.sun.com/
+path.separator=;
+java.vm.name=Java HotSpot(TM) Client VM
+file.encoding.pkg=sun.io
+user.country=US
+sun.os.patch.level=Service Pack 1
+java.vm.specification.name=Java Virtual Machine Specification
+user.dir=C:\Program Files\jEdit 4.2pre7\jars\J...
+java.runtime.version=1.4.2_01-b06
+java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+java.endorsed.dirs=C:\Program Files\Java\j2re1.4.2_01\li...
+os.arch=x86
+java.io.tmpdir=C:\DOCUME~1\MIKEAT~1\LOCALS~1\Temp\
+line.separator=
+
+java.vm.specification.vendor=Sun Microsystems Inc.
+user.variant=
+os.name=Windows XP
+sun.java2d.fontpath=
+java.library.path=C:\Program Files\Java\j2re1.4.2_01\bi...
+java.specification.name=Java Platform API Specification
+java.class.version=48.0
+java.util.prefs.PreferencesFactory=java.util.prefs.WindowsPreferencesFac...
+os.version=5.1
+user.home=C:\Documents and Settings\Mike Atkinson
+user.timezone=
+java.awt.printerjob=sun.awt.windows.WPrinterJob
+file.encoding=Cp1252
+java.specification.version=1.4
+user.name=Mike Atkinson
+java.class.path=C:\Program Files\jEdit 4.2pre7\jars\J...
+java.vm.specification.version=1.0
+sun.arch.data.model=32
+java.home=C:\Program Files\Java\j2re1.4.2_01
+java.specification.vendor=Sun Microsystems Inc.
+user.language=en
+awt.toolkit=sun.awt.windows.WToolkit
+java.vm.info=mixed mode
+java.version=1.4.2_01
+java.ext.dirs=C:\Program Files\Java\j2re1.4.2_01\li...
+sun.boot.class.path=C:\Program Files\Java\j2re1.4.2_01\li...
+java.vendor=Sun Microsystems Inc.
+file.separator=\
+java.vendor.url.bug=http://java.sun.com/cgi-bin/bugreport...
+sun.cpu.endian=little
+sun.io.unicode.encoding=UnicodeLittle
+sun.cpu.isalist=pentium i486 i386
+new JRefactory()
+getProperties(pretty,null)
+Navigator: adding buffer!
+Navigation created
+log(1,class org.acm.seguin.ide.standalone.JRefactory,JRefactory version: 2.9.14)
+log(1,class org.acm.seguin.ide.standalone.JRefactory,pretty settings file version: 4.4)
+Navigation.addBuffer(doc)
+Navigator: adding buffer!
+added listener
+checkDirectory(viewtrue)
+getProjectName(null)
+getProperties(pmd,)
+RefactoringAction(SelectedFileSet)
+RefactoringAction(SelectedFileSet)
+openFile(view, C:\Java\Test\com\test\MyInterface.java)
+Navigation.addBuffer(doc)
+log(3,class java.lang.String,adding buffer!)
+getFilePathForBuffer(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=])
+getFilePathForBuffer(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=])
+getText(view, javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=])
+log(3,class java.lang.String,parser started)
+added listener
+setBuffer(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=])
+getLineStartOffset(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=],19)
+getLineStartOffset(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=],20)
+setSelection(view, 324,378)
+moveCaretPosition(view, 378)
+changeUpdate([])
+getText(view, javax.swing.JTextPane[,0,0,597x642,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=])
+log(3,class java.lang.String,PARSE @Tue Dec 16 21:31:53 GMT 2003 - C:\Java\Test\com\test\MyInterface.java)
+NOT IMPLEMENTED: bufferParsed()
+NOT IMPLEMENTED: bufferNavigatorTree()
+openFile(view, C:\Java\Test\com\test\Test2Child.java)
+Navigation.addBuffer(doc)
+log(3,class java.lang.String,adding buffer!)
+getFilePathForBuffer(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@9b87f6,typeHandlers=])
+getFilePathForBuffer(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@9b87f6,typeHandlers=])
+getText(view, javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@9b87f6,typeHandlers=])
+log(3,class java.lang.String,parser started)
+added listener
+setBuffer(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@9b87f6,typeHandlers=])
+getLineStartOffset(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@9b87f6,typeHandlers=],25)
+getLineStartOffset(javax.swing.JTextPane[,0,0,0x0,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@9b87f6,typeHandlers=],26)
+setSelection(view, 344,369)
+moveCaretPosition(view, 369)
+changeUpdate([])
+getText(view, javax.swing.JTextPane[,0,0,582x1206,invalid,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@9b87f6,typeHandlers=])
+log(3,class java.lang.String,PARSE @Tue Dec 16 21:31:55 GMT 2003 - C:\Java\Test\com\test\Test2Child.java)
+NOT IMPLEMENTED: bufferParsed()
+NOT IMPLEMENTED: bufferNavigatorTree()
+openFile(view, C:\Java\Test\com\test\MyInterface.java)
+setBuffer(javax.swing.JTextPane[,0,0,597x642,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=])
+getLineStartOffset(javax.swing.JTextPane[,0,0,597x642,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=],19)
+getLineStartOffset(javax.swing.JTextPane[,0,0,597x642,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=],20)
+setSelection(view, 324,378)
+moveCaretPosition(view, 378)
+openFile(view, C:\Java\Test\com\test\MyInterface.java)
+setBuffer(javax.swing.JTextPane[,0,0,597x642,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=])
+getLineStartOffset(javax.swing.JTextPane[,0,0,597x642,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=],27)
+getLineStartOffset(javax.swing.JTextPane[,0,0,597x642,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=],28)
+setSelection(view, 455,481)
+moveCaretPosition(view, 481)
+directory=C:\Documents and Settings\Mike Atkinson\.JRefactory\javastyle\.Refactory
+saveKnownModules()
+Saving to:  C:\Documents and Settings\Mike Atkinson\.JRefactory\javastyle\.Refactory\projects\default\proj.settings
+umlType=net.sourceforge.jrefactory.uml.UMLType[,443,784,0x0,invalid,layout=net.sourceforge.jrefactory.uml.UMLType$TypeLayout,alignmentX=null,alignmentY=null,border=javax.swing.border.LineBorder@3fc47c,flags=9,maximumSize=,minimumSize=,preferredSize=]
+umlType=net.sourceforge.jrefactory.uml.UMLType[,42,320,0x0,invalid,layout=net.sourceforge.jrefactory.uml.UMLType$TypeLayout,alignmentX=null,alignmentY=null,border=javax.swing.border.LineBorder@7cb44d,flags=9,maximumSize=,minimumSize=,preferredSize=]
+umlType=net.sourceforge.jrefactory.uml.UMLType[,20,20,0x0,invalid,layout=net.sourceforge.jrefactory.uml.UMLType$TypeLayout,alignmentX=null,alignmentY=null,border=javax.swing.border.LineBorder@1214626,flags=9,maximumSize=,minimumSize=,preferredSize=]
+umlType=net.sourceforge.jrefactory.uml.UMLType[,401,1085,0x0,invalid,layout=net.sourceforge.jrefactory.uml.UMLType$TypeLayout,alignmentX=null,alignmentY=null,border=javax.swing.border.LineBorder@1849daf,flags=9,maximumSize=,minimumSize=,preferredSize=]
+umlType=net.sourceforge.jrefactory.uml.UMLType[,343,908,0x0,invalid,layout=net.sourceforge.jrefactory.uml.UMLType$TypeLayout,alignmentX=null,alignmentY=null,border=javax.swing.border.LineBorder@18c69a9,flags=9,maximumSize=,minimumSize=,preferredSize=]
+umlType=net.sourceforge.jrefactory.uml.UMLType[,335,480,0x0,invalid,layout=net.sourceforge.jrefactory.uml.UMLType$TypeLayout,alignmentX=null,alignmentY=null,border=javax.swing.border.LineBorder@16cefa8,flags=9,maximumSize=,minimumSize=,preferredSize=]
+umlType.isVisible()=true
+net.sourceforge.jrefactory.uml.UMLType[,39,205,361x140,layout=net.sourceforge.jrefactory.uml.UMLType$TypeLayout,alignmentX=null,alignmentY=null,border=javax.swing.border.LineBorder@7cb44d,flags=9,maximumSize=,minimumSize=,preferredSize=]
+UMLPopupMenu(net.sourceforge.jrefactory.uml.UMLPackage[,0,0,1185x1108,layout=net.sourceforge.jrefactory.uml.UMLPackage$PackageLayout,alignmentX=null,alignmentY=null,border=,flags=9,maximumSize=,minimumSize=,preferredSize=],net.sourceforge.jrefactory.uml.UMLType[,39,205,361x140,layout=net.sourceforge.jrefactory.uml.UMLType$TypeLayout,alignmentX=null,alignmentY=null,border=javax.swing.border.LineBorder@7cb44d,flags=9,maximumSize=,minimumSize=,preferredSize=])
+RefactoringAction(SelectedFileSet)
+RefactoringAction.setPopupMenuListener()
+RenameClassAction()
+RenameClassAction.isEnabled()
+RefactoringAction.isSingleJavaFile()
+RefactoringAction(SelectedFileSet)
+RefactoringAction.setPopupMenuListener()
+RefactoringAction.isAllJava()
+RefactoringAction(SelectedFileSet)
+RefactoringAction.setPopupMenuListener()
+RefactoringAction.isAllJava()
+RefactoringAction(SelectedFileSet)
+RefactoringAction.setPopupMenuListener()
+RefactoringAction.isSingleJavaFile()
+RefactoringAction(SelectedFileSet)
+RefactoringAction.setPopupMenuListener()
+RefactoringAction.isSingleJavaFile()
+RefactoringAction(SelectedFileSet)
+RefactoringAction.setPopupMenuListener()
+RefactoringAction.isAllJava()
+RefactoringAction(SelectedFileSet)
+RefactoringAction.setPopupMenuListener()
+RefactoringAction.isSingleJavaFile()
+getFile(view,javax.swing.JTextPane[,0,0,597x642,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@1a40247,typeHandlers=])
+RefactoringAction(SelectedFileSet)
+RefactoringAction.setPopupMenuListener()
+gotoSource(C:\Java\Test\com\test\Test2Child.java, -1)
+openFile(view, C:\Java\Test\com\test\Test2Child.java)
+getLineStartOffset(javax.swing.JTextPane[,0,0,582x1206,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=null,alignmentY=null,border=javax.swing.plaf.basic.BasicBorders$MarginBorder@91a4fb,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=153,g=153,b=153],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=3,left=3,bottom=3,right=3],selectedTextColor=java.awt.Color[r=0,g=0,b=0],selectionColor=java.awt.Color[r=0,g=0,b=255],kit=javax.swing.text.StyledEditorKit@9b87f6,typeHandlers=],-2)
+  start=0
+moveCaretPosition(view, 0)

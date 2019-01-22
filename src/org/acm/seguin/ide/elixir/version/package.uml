@@ -1,0 +1,16 @@
+V[1.1:org.acm.seguin.ide.elixir.version]
+S[org.acm.seguin.ide.elixir.version:ElixirContainsThread,java.lang:Thread]{2:(594,775),(771,621)}
+S[org.acm.seguin.ide.elixir.version:ElixirVersionControlThread,java.lang:Thread]{2:(657,541),(771,510)}
+S[org.acm.seguin.ide.elixir.version:AddListener,java.awt.event:ActionListener]{2:(496,156),(452,119)}
+S[org.acm.seguin.ide.elixir.version:CheckInListener,java.awt.event:ActionListener]{2:(267,153),(313,119)}
+S[org.acm.seguin.ide.elixir.version:CheckOutListener,java.awt.event:ActionListener]{2:(385,292),(387,119)}
+S[org.acm.seguin.ide.elixir.version:ElixirVersionControl,<unknown>:com.elixirtech.ide.version]{2:(96,504),(93,465)}
+P[org.acm.seguin.ide.elixir.version:AddListener]{403,156}
+P[org.acm.seguin.ide.elixir.version:CheckInListener]{0,153}
+P[org.acm.seguin.ide.elixir.version:CheckOutListener]{198,292}
+P[org.acm.seguin.ide.elixir.version:ElixirContainsThread]{138,775}
+P[org.acm.seguin.ide.elixir.version:ElixirVersionControl]{3,504}
+P[org.acm.seguin.ide.elixir.version:ElixirVersionControlThread]{239,487}
+P[java.lang:Thread]{771,5}
+P[java.awt.event:ActionListener]{286,9}
+P[<unknown>:com.elixirtech.ide.version]{10,373}
